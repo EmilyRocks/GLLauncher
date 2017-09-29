@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<parms>
+  <sp>
+    <cashaccounts>
+      <comment>Standard cash account variables. GL2-GL6 are available to use as variable segments</comment>
+    <account name="cash" gl1="" gl2="" gl3="" gl4="" gl5="" gl6=""/>
+    <account name="manual" gl1="" gl2="" gl3="" gl4="" gl5="" gl6=""/>
+    <account name="netChecks" gl1="" gl2="" gl3="" gl4="" gl5="" gl6=""/>
+    </cashaccounts>
+  </sp>
+  <fields>
+<comment>Fields to select in the SP. Selected by assigning Yes/No values to the include attribute. </comment>
+<field name="account" include="N"/>
+<field name="gl1" include="N"/>
+<field name="gl2" include="N"/>
+<field name="gl3" include="N"/>
+<field name="gl4" include="N"/>
+<field name="gl5" include="N"/>
+<field name="gl6" include="N"/>
+<field name="checkDate" include="N"/>
+<field name="process" include="N"/>
+<field name="beginDate" include="N"/>
+<field name="endDate" include="N"/>
+<field name="processDate" include="N"/>
+<field name="endOfMonthDate" include="N"/>
+<field name="amount" include="N"/>
+<field name="accountName" include="N"/>
+<field name="coID" include="N"/>
+<field name="rulesEmpNameFirst" include="N"/>
+<field name="rulesEmpNameMiddle" include="N"/>
+<field name="rulesEmpNameLast" include="N"/>
+<field name="checksEmpID" include="N"/>
+<field name="checksEmpNameFirst" include="N"/>
+<field name="checksEmpNameMiddle" include="N"/>
+<field name="checksEmpNameLast" include="N"/>
+<field name="checksCheckNumber" include="N"/>
+<field name="hours" include="N"/>
+<field name="detType" include="N"/>
+<field name="detCode" include="N"/>
+<field name="rowSource" include="N"/>
+<field name="customField1" include="N"/>
+<field name="customField2" include="N"/>
+<field name="customField3" include="N"/>
+<field name="customField4" include="N"/>
+<field name="customField5" include="N"/>
+<field name="laborDistEmpID" include="N"/>
+<field name="laborDistCC1Code" include="N"/>
+<field name="laborDistCC2Code" include="N"/>
+<field name="laborDistCC3Code" include="N"/>
+<field name="laborDistCC1Name" include="N"/>
+<field name="laborDistCC2Name" include="N"/>
+<field name="laborDistCC3Name" include="N"/>
+</fields>
+</parms>

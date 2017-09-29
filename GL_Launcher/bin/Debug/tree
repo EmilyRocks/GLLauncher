@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<parms>
+  <type Standard="ejentries" name="reportType" />
+  <sp>
+    <accounts>
+      <account />
+    </accounts>
+    <fields>
+      <field />
+    </fields>
+    <transfers>
+      <transfer />
+    </transfers>
+    <miscellaneous>
+      <misc />
+    </miscellaneous>
+  </sp>
+  <rdl>
+    <miscellaneous>
+      <misc />
+    </miscellaneous>
+    <dates>
+      <date />
+    </dates>
+    <sorts>
+      <sort />
+    </sorts>
+  </rdl>
+  <rdlReportFormat>
+    <format />
+    <header />
+    <footer />
+    <fro />
+    <groupFooter />
+    <groupHeader />
+    <pdf />
+    <pdfHeader />
+    <pdfBody />
+  </rdlReportFormat>
+</parms>
