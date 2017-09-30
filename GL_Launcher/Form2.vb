@@ -7,7 +7,7 @@ Public Class Form2
         Button1.BackColor = Color.LavenderBlush
         AccrualButton.BackColor = Color.LavenderBlush
         'this works to launch a text version and no need to clear mem
-        'Dim path As String = "D:\My Visual Studio Projects\GL_Launcher\newFile.xml"
+        'Dim path As String = My.Computer.FileSystem.SpecialDirectories.MyDocuments & "\newFile.xml"
         'Using newFile As StreamWriter = New StreamWriter(path)
         'End Using
     End Sub
@@ -26,18 +26,16 @@ Public Class Form2
 
     Private Sub Form2_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         Dim revisedutf8 As New System.Text.UTF8Encoding(False)
-        Dim newFile As New XmlTextWriter("D:\My Visual Studio Projects\GL_Launcher\newFile.xml", revisedutf8)
+        Dim path As String = My.Computer.FileSystem.SpecialDirectories.MyDocuments & "\newFile.xml"
+        Dim newFile As New XmlTextWriter(path, revisedutf8)
         newFile.WriteStartDocument(True)
         newFile.Formatting = Formatting.Indented
         newFile.Indentation = 2
         newFile.WriteStartElement("parms")
-        newFile.WriteStartElement("type")
-        If AccrualButton.BackColor = Color.Green Then newFile.WriteAttributeString("accrual", "accrual")
-        If Button1.BackColor = Color.Green Then newFile.WriteAttributeString("Detailed", "elabordist")
-        If Button2.BackColor = Color.Green Then newFile.WriteAttributeString("Standard", "ejentries")
-        newFile.WriteAttributeString("name", "reportType")
-        newFile.WriteEndElement()
         newFile.WriteStartElement("sp")
+        If AccrualButton.BackColor = Color.Green Then newFile.WriteAttributeString("reportType", "accrual")
+        If Button1.BackColor = Color.Green Then newFile.WriteAttributeString("reportType", "detailed")
+        If Button2.BackColor = Color.Green Then newFile.WriteAttributeString("reportType", "standard")
         newFile.WriteStartElement("accounts")
         newFile.WriteEndElement()
         newFile.WriteStartElement("fields")
@@ -55,8 +53,6 @@ Public Class Form2
         newFile.WriteEndElement()
         newFile.WriteEndElement()
         newFile.WriteStartElement("dates")
-        newFile.WriteStartElement("date")
-        newFile.WriteEndElement()
         newFile.WriteEndElement()
         newFile.WriteStartElement("sorts")
         newFile.WriteStartElement("sort")
@@ -93,42 +89,4 @@ Public Class Form2
 End Class
 
 
-
-
-
-
-
-
-
-'Public Class Form1
-'Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-'Dim newFile As New XmlTextWriter("D:\My Visual Studio Projects\GL_Launcher\newFile.xml", System.Text.Encoding.UTF8)
-'        newFile.WriteStartDocument(True)
-'        newFile.Formatting = Formatting.Indented
-'        newFile.Indentation = 2
-'        newFile.WriteStartElement("parms")
-'        newFile.WriteStartElement("type")
-'        newFile.WriteStartElement("sp")
-'        newFile.WriteStartElement("rdl")
-'        newFile.WriteStartElement("rdlReportFormat")
-'        newFile.WriteEndElement()
-'        newFile.WriteEndElement()
-'        newFile.WriteEndElement()
-'        newFile.WriteEndElement()
-'        newFile.WriteEndElement()
-'        newFile.Close()
-'End Sub
-'    Private Sub createNode(ByVal pID As String, ByVal pName As String, ByVal pPrice As String, ByVal writer As XmlTextWriter)
-'        writer.WriteStartElement("Product")
-'        writer.WriteStartElement("Product_id")
-'        writer.WriteString(pID)
-'        writer.WriteEndElement()
-'        writer.WriteStartElement("Product_name")
-'        writer.WriteString(pName)
-'        writer.WriteEndElement()
-'        writer.WriteStartElement("Product_price")
-'        writer.WriteString(pPrice)
-'        writer.WriteEndElement()
-'        writer.WriteEndElement()
-'    End Sub
-'End Class
+'"D:\My Visual Studio Projects\GL_Launcher\newFile.xml"

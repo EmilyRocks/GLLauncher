@@ -6,8 +6,8 @@ Public Class transfersFrm
 
     Private Sub transfersFrm_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         Dim newFile As New XmlDocument
-        newFile.Load("D:\My Visual Studio Projects\GL_Launcher\newFile.xml")
-        Dim path As String = "D:\My Visual Studio Projects\GL_Launcher\newFile.xml"
+        Dim path As String = My.Computer.FileSystem.SpecialDirectories.MyDocuments & "\newFile.xml"
+        newFile.Load(path)
         Dim transfers As XmlElement = newFile.SelectSingleNode(xpath:="//transfers")
         Dim accounts As XmlElement = newFile.SelectSingleNode(xpath:="//accounts")
         Dim agency As XmlElement = newFile.CreateElement("transfer")

@@ -4,8 +4,8 @@ Public Class miscFrm
 
     Private Sub miscFrm_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         Dim newFile As New XmlDocument
-        newFile.Load("D:\My Visual Studio Projects\GL_Launcher\newFile.xml")
-        Dim path As String = "D:\My Visual Studio Projects\GL_Launcher\newFile.xml"
+        Dim path As String = My.Computer.FileSystem.SpecialDirectories.MyDocuments & "\newFile.xml"
+        newFile.Load(path)
         Dim charTrim As XmlElement = newFile.CreateElement("misc")
         Dim xmlTrim As String
         Dim miscSP As XmlElement = newFile.SelectSingleNode(xpath:="//miscellaneous")

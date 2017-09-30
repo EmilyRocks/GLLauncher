@@ -43,6 +43,15 @@ Partial Class ColumnsFrm
         Me.ct1Textbox = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.dtFormatButton9 = New System.Windows.Forms.ComboBox()
+        Me.dtFormatButton8 = New System.Windows.Forms.ComboBox()
+        Me.dtFormatButton7 = New System.Windows.Forms.ComboBox()
+        Me.dtFormatButton6 = New System.Windows.Forms.ComboBox()
+        Me.dtFormatButton5 = New System.Windows.Forms.ComboBox()
+        Me.dtFormatButton4 = New System.Windows.Forms.ComboBox()
+        Me.dtFormatButton3 = New System.Windows.Forms.ComboBox()
+        Me.dtFormatButton2 = New System.Windows.Forms.ComboBox()
+        Me.dtFormatButton1 = New System.Windows.Forms.ComboBox()
         Me.cv9bTextbox = New System.Windows.Forms.ComboBox()
         Me.cv8bTextbox = New System.Windows.Forms.ComboBox()
         Me.cv7bTextbox = New System.Windows.Forms.ComboBox()
@@ -132,7 +141,7 @@ Partial Class ColumnsFrm
         'ct9Textbox
         '
         Me.ct9Textbox.FormattingEnabled = True
-        Me.ct9Textbox.Items.AddRange(New Object() {"Combo", "Dynamic", "Text"})
+        Me.ct9Textbox.Items.AddRange(New Object() {"combo", "dynamic", "text"})
         Me.ct9Textbox.Location = New System.Drawing.Point(1124, 29)
         Me.ct9Textbox.Name = "ct9Textbox"
         Me.ct9Textbox.Size = New System.Drawing.Size(132, 21)
@@ -142,7 +151,7 @@ Partial Class ColumnsFrm
         'ct8Textbox
         '
         Me.ct8Textbox.FormattingEnabled = True
-        Me.ct8Textbox.Items.AddRange(New Object() {"Combo", "Dynamic", "Text"})
+        Me.ct8Textbox.Items.AddRange(New Object() {"combo", "dynamic", "text"})
         Me.ct8Textbox.Location = New System.Drawing.Point(984, 29)
         Me.ct8Textbox.Name = "ct8Textbox"
         Me.ct8Textbox.Size = New System.Drawing.Size(132, 21)
@@ -152,7 +161,7 @@ Partial Class ColumnsFrm
         'ct7Textbox
         '
         Me.ct7Textbox.FormattingEnabled = True
-        Me.ct7Textbox.Items.AddRange(New Object() {"Combo", "Dynamic", "Text"})
+        Me.ct7Textbox.Items.AddRange(New Object() {"combo", "dynamic", "text"})
         Me.ct7Textbox.Location = New System.Drawing.Point(844, 29)
         Me.ct7Textbox.Name = "ct7Textbox"
         Me.ct7Textbox.Size = New System.Drawing.Size(132, 21)
@@ -162,7 +171,7 @@ Partial Class ColumnsFrm
         'ct6Textbox
         '
         Me.ct6Textbox.FormattingEnabled = True
-        Me.ct6Textbox.Items.AddRange(New Object() {"Combo", "Dynamic", "Text"})
+        Me.ct6Textbox.Items.AddRange(New Object() {"combo", "dynamic", "text"})
         Me.ct6Textbox.Location = New System.Drawing.Point(704, 29)
         Me.ct6Textbox.Name = "ct6Textbox"
         Me.ct6Textbox.Size = New System.Drawing.Size(132, 21)
@@ -181,7 +190,7 @@ Partial Class ColumnsFrm
         'ct5Textbox
         '
         Me.ct5Textbox.FormattingEnabled = True
-        Me.ct5Textbox.Items.AddRange(New Object() {"Combo", "Dynamic", "Text"})
+        Me.ct5Textbox.Items.AddRange(New Object() {"combo", "dynamic", "text"})
         Me.ct5Textbox.Location = New System.Drawing.Point(564, 29)
         Me.ct5Textbox.Name = "ct5Textbox"
         Me.ct5Textbox.Size = New System.Drawing.Size(132, 21)
@@ -200,7 +209,7 @@ Partial Class ColumnsFrm
         'ct4Textbox
         '
         Me.ct4Textbox.FormattingEnabled = True
-        Me.ct4Textbox.Items.AddRange(New Object() {"Combo", "Dynamic", "Text"})
+        Me.ct4Textbox.Items.AddRange(New Object() {"combo", "dynamic", "text"})
         Me.ct4Textbox.Location = New System.Drawing.Point(424, 29)
         Me.ct4Textbox.Name = "ct4Textbox"
         Me.ct4Textbox.Size = New System.Drawing.Size(132, 21)
@@ -219,7 +228,7 @@ Partial Class ColumnsFrm
         'ct3Textbox
         '
         Me.ct3Textbox.FormattingEnabled = True
-        Me.ct3Textbox.Items.AddRange(New Object() {"Combo", "Dynamic", "Text"})
+        Me.ct3Textbox.Items.AddRange(New Object() {"combo", "dynamic", "text"})
         Me.ct3Textbox.Location = New System.Drawing.Point(284, 29)
         Me.ct3Textbox.Name = "ct3Textbox"
         Me.ct3Textbox.Size = New System.Drawing.Size(132, 21)
@@ -229,7 +238,7 @@ Partial Class ColumnsFrm
         'ct2Textbox
         '
         Me.ct2Textbox.FormattingEnabled = True
-        Me.ct2Textbox.Items.AddRange(New Object() {"Combo", "Dynamic", "Text"})
+        Me.ct2Textbox.Items.AddRange(New Object() {"combo", "dynamic", "text"})
         Me.ct2Textbox.Location = New System.Drawing.Point(144, 29)
         Me.ct2Textbox.Name = "ct2Textbox"
         Me.ct2Textbox.Size = New System.Drawing.Size(132, 21)
@@ -266,7 +275,7 @@ Partial Class ColumnsFrm
         'ct1Textbox
         '
         Me.ct1Textbox.FormattingEnabled = True
-        Me.ct1Textbox.Items.AddRange(New Object() {"Combo", "Dynamic", "Text"})
+        Me.ct1Textbox.Items.AddRange(New Object() {"combo", "dynamic", "text"})
         Me.ct1Textbox.Location = New System.Drawing.Point(4, 29)
         Me.ct1Textbox.Name = "ct1Textbox"
         Me.ct1Textbox.Size = New System.Drawing.Size(132, 21)
@@ -287,6 +296,15 @@ Partial Class ColumnsFrm
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.dtFormatButton9)
+        Me.Panel2.Controls.Add(Me.dtFormatButton8)
+        Me.Panel2.Controls.Add(Me.dtFormatButton7)
+        Me.Panel2.Controls.Add(Me.dtFormatButton6)
+        Me.Panel2.Controls.Add(Me.dtFormatButton5)
+        Me.Panel2.Controls.Add(Me.dtFormatButton4)
+        Me.Panel2.Controls.Add(Me.dtFormatButton3)
+        Me.Panel2.Controls.Add(Me.dtFormatButton2)
+        Me.Panel2.Controls.Add(Me.dtFormatButton1)
         Me.Panel2.Controls.Add(Me.cv9bTextbox)
         Me.Panel2.Controls.Add(Me.cv8bTextbox)
         Me.Panel2.Controls.Add(Me.cv7bTextbox)
@@ -316,9 +334,108 @@ Partial Class ColumnsFrm
         Me.Panel2.Controls.Add(Me.cv1aTextbox)
         Me.Panel2.Location = New System.Drawing.Point(12, 148)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1264, 88)
+        Me.Panel2.Size = New System.Drawing.Size(1264, 109)
         Me.Panel2.TabIndex = 19
         Me.Panel2.Tag = "GL1 Type"
+        '
+        'dtFormatButton9
+        '
+        Me.dtFormatButton9.FormattingEnabled = True
+        Me.dtFormatButton9.Location = New System.Drawing.Point(1124, 83)
+        Me.dtFormatButton9.Name = "dtFormatButton9"
+        Me.dtFormatButton9.Size = New System.Drawing.Size(132, 21)
+        Me.dtFormatButton9.TabIndex = 36
+        Me.dtFormatButton9.Tag = "Enter date format"
+        Me.dtFormatButton9.Text = "MM/dd/yyyy"
+        Me.dtFormatButton9.Visible = False
+        '
+        'dtFormatButton8
+        '
+        Me.dtFormatButton8.FormattingEnabled = True
+        Me.dtFormatButton8.Location = New System.Drawing.Point(982, 83)
+        Me.dtFormatButton8.Name = "dtFormatButton8"
+        Me.dtFormatButton8.Size = New System.Drawing.Size(132, 21)
+        Me.dtFormatButton8.TabIndex = 35
+        Me.dtFormatButton8.Tag = "Enter date format"
+        Me.dtFormatButton8.Text = "MM/dd/yyyy"
+        Me.dtFormatButton8.Visible = False
+        '
+        'dtFormatButton7
+        '
+        Me.dtFormatButton7.FormattingEnabled = True
+        Me.dtFormatButton7.Location = New System.Drawing.Point(844, 83)
+        Me.dtFormatButton7.Name = "dtFormatButton7"
+        Me.dtFormatButton7.Size = New System.Drawing.Size(132, 21)
+        Me.dtFormatButton7.TabIndex = 34
+        Me.dtFormatButton7.Tag = "Enter date format"
+        Me.dtFormatButton7.Text = "MM/dd/yyyy"
+        Me.dtFormatButton7.Visible = False
+        '
+        'dtFormatButton6
+        '
+        Me.dtFormatButton6.FormattingEnabled = True
+        Me.dtFormatButton6.Location = New System.Drawing.Point(704, 83)
+        Me.dtFormatButton6.Name = "dtFormatButton6"
+        Me.dtFormatButton6.Size = New System.Drawing.Size(132, 21)
+        Me.dtFormatButton6.TabIndex = 33
+        Me.dtFormatButton6.Tag = "Enter date format"
+        Me.dtFormatButton6.Text = "MM/dd/yyyy"
+        Me.dtFormatButton6.Visible = False
+        '
+        'dtFormatButton5
+        '
+        Me.dtFormatButton5.FormattingEnabled = True
+        Me.dtFormatButton5.Location = New System.Drawing.Point(564, 83)
+        Me.dtFormatButton5.Name = "dtFormatButton5"
+        Me.dtFormatButton5.Size = New System.Drawing.Size(132, 21)
+        Me.dtFormatButton5.TabIndex = 32
+        Me.dtFormatButton5.Tag = "Enter date format"
+        Me.dtFormatButton5.Text = "MM/dd/yyyy"
+        Me.dtFormatButton5.Visible = False
+        '
+        'dtFormatButton4
+        '
+        Me.dtFormatButton4.FormattingEnabled = True
+        Me.dtFormatButton4.Location = New System.Drawing.Point(424, 83)
+        Me.dtFormatButton4.Name = "dtFormatButton4"
+        Me.dtFormatButton4.Size = New System.Drawing.Size(132, 21)
+        Me.dtFormatButton4.TabIndex = 31
+        Me.dtFormatButton4.Tag = "Enter date format"
+        Me.dtFormatButton4.Text = "MM/dd/yyyy"
+        Me.dtFormatButton4.Visible = False
+        '
+        'dtFormatButton3
+        '
+        Me.dtFormatButton3.FormattingEnabled = True
+        Me.dtFormatButton3.Location = New System.Drawing.Point(284, 83)
+        Me.dtFormatButton3.Name = "dtFormatButton3"
+        Me.dtFormatButton3.Size = New System.Drawing.Size(132, 21)
+        Me.dtFormatButton3.TabIndex = 30
+        Me.dtFormatButton3.Tag = "Enter date format"
+        Me.dtFormatButton3.Text = "MM/dd/yyyy"
+        Me.dtFormatButton3.Visible = False
+        '
+        'dtFormatButton2
+        '
+        Me.dtFormatButton2.FormattingEnabled = True
+        Me.dtFormatButton2.Location = New System.Drawing.Point(144, 83)
+        Me.dtFormatButton2.Name = "dtFormatButton2"
+        Me.dtFormatButton2.Size = New System.Drawing.Size(132, 21)
+        Me.dtFormatButton2.TabIndex = 29
+        Me.dtFormatButton2.Tag = "Enter date format"
+        Me.dtFormatButton2.Text = "MM/dd/yyyy"
+        Me.dtFormatButton2.Visible = False
+        '
+        'dtFormatButton1
+        '
+        Me.dtFormatButton1.FormattingEnabled = True
+        Me.dtFormatButton1.Location = New System.Drawing.Point(4, 83)
+        Me.dtFormatButton1.Name = "dtFormatButton1"
+        Me.dtFormatButton1.Size = New System.Drawing.Size(132, 21)
+        Me.dtFormatButton1.TabIndex = 28
+        Me.dtFormatButton1.Tag = "Enter date format"
+        Me.dtFormatButton1.Text = "MM/dd/yyyy"
+        Me.dtFormatButton1.Visible = False
         '
         'cv9bTextbox
         '
@@ -600,7 +717,7 @@ Partial Class ColumnsFrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1280, 261)
+        Me.ClientSize = New System.Drawing.Size(1280, 286)
         Me.Controls.Add(Me.DelimiterButton)
         Me.Controls.Add(Me.Label20)
         Me.Controls.Add(Me.Panel2)
@@ -668,4 +785,13 @@ Partial Class ColumnsFrm
     Friend WithEvents cv4bTextbox As ComboBox
     Friend WithEvents cv3bTextbox As ComboBox
     Friend WithEvents cv2bTextbox As ComboBox
+    Friend WithEvents dtFormatButton1 As ComboBox
+    Friend WithEvents dtFormatButton9 As ComboBox
+    Friend WithEvents dtFormatButton8 As ComboBox
+    Friend WithEvents dtFormatButton7 As ComboBox
+    Friend WithEvents dtFormatButton6 As ComboBox
+    Friend WithEvents dtFormatButton5 As ComboBox
+    Friend WithEvents dtFormatButton4 As ComboBox
+    Friend WithEvents dtFormatButton3 As ComboBox
+    Friend WithEvents dtFormatButton2 As ComboBox
 End Class

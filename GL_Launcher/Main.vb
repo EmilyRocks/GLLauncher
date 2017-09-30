@@ -8,6 +8,7 @@ Option Strict On
 
 Imports System.ComponentModel
 Imports System.Xml
+Imports System.IO
 ' Imports System.Text
 
 Public Class Launcher
@@ -49,5 +50,22 @@ Public Class Launcher
         oForm = New miscFrm
         miscFrm.Show()
         oForm = Nothing
+    End Sub
+
+    Private Sub LaunchGL_Click(sender As Object, e As EventArgs) Handles LaunchGL.Click
+        Dim SaveFileDialog1 As New SaveFileDialog
+        SaveFileDialog1.CreatePrompt = True
+        SaveFileDialog1.OverwritePrompt = True
+        SaveFileDialog1.FileName = "crpt_StdGL_"
+        SaveFileDialog1.DefaultExt = "xml"
+        SaveFileDialog1.Filter = "Xml files (*.xml)|*.xml|All files (*.*)|*.*"
+        SaveFileDialog1.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+        Dim result As DialogResult = SaveFileDialog1.ShowDialog()
+        Dim fileStream As Stream
+        If (result = DialogResult.OK) Then
+            Dim newfile As New XmlDocument
+            newfile.Load(My.Computer.FileSystem.SpecialDirectories.MyDocuments & "\newFile.xml")
+            newfile.Save(SaveFileDialog1.FileName)
+        End If
     End Sub
 End Class

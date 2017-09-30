@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<parms>
+  <sp reportType="accrual">
+    <accounts />
+    <fields />
+    <transfers />
+    <miscellaneous>
+      <misc />
+    </miscellaneous>
+  </sp>
+  <rdl>
+    <miscellaneous>
+      <misc />
+    </miscellaneous>
+    <dates>
+      <date />
+    </dates>
+    <sorts>
+      <sort />
+    </sorts>
+  </rdl>
+  <rdlReportFormat>
+    <format />
+    <header />
+    <footer />
+    <fro />
+    <groupFooter />
+    <groupHeader />
+    <pdf />
+    <pdfHeader />
+    <pdfBody />
+  </rdlReportFormat>
+</parms>

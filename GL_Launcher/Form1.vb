@@ -4,9 +4,10 @@ Imports System.IO
 
 Public Class Cash
     Dim newFile As New XmlDocument()
+    Dim path As String = My.Computer.FileSystem.SpecialDirectories.MyDocuments & "\newFile.xml"
     Private Sub Cash_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If IO.File.Exists("D:\My Visual Studio Projects\GL_Launcher\newFile.xml") Then
-            newFile.Load("D:\My Visual Studio Projects\GL_Launcher\newFile.xml")
+        If IO.File.Exists(path) Then
+            newFile.Load(path)
         Else
             MessageBox.Show("Go select a report type first")
             Me.Close()
@@ -14,15 +15,15 @@ Public Class Cash
     End Sub
 
     Private Sub Cash_Leave(sender As Object, e As EventArgs) Handles Me.Leave
-        If IO.File.Exists("D:\My Visual Studio Projects\GL_Launcher\newFile.xml") Then
-            newFile.Save("D:\My Visual Studio Projects\GL_Launcher\newFile.xml")
+        If IO.File.Exists(path) Then
+            newFile.Save(path)
         End If
     End Sub
 
     Private Sub Cash_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         Dim newFile As New XmlDocument
-        newFile.Load("D:\My Visual Studio Projects\GL_Launcher\newFile.xml")
-        Dim path As String = "D:\My Visual Studio Projects\GL_Launcher\newFile.xml"
+        Dim path As String = My.Computer.FileSystem.SpecialDirectories.MyDocuments & "\newFile.xml"
+        newFile.Load(path)
         Dim nsmgr As New XmlNamespaceManager(newFile.NameTable)
         nsmgr.AddNamespace("accounts", path)
         Dim xmlAcct As XmlElement = newFile.CreateElement("account")
