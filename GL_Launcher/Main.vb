@@ -52,6 +52,13 @@ Public Class Launcher
         oForm = Nothing
     End Sub
 
+    Private Sub StartHeader_Click(sender As Object, e As EventArgs) Handles StartHeader.Click
+        Dim oForm As Header
+        oForm = New Header
+        Header.Show()
+        oForm = Nothing
+    End Sub
+
     Private Sub LaunchGL_Click(sender As Object, e As EventArgs) Handles LaunchGL.Click
         'outputs character trimming into xml file
         Dim newFile As New XmlDocument
@@ -85,4 +92,6 @@ Public Class Launcher
             newFile.Save(SaveFileDialog1.FileName)
         End If
     End Sub
+
+
 End Class

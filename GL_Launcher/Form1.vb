@@ -150,9 +150,9 @@ Public Class Cash
 
 
         'turn on for sanity check during testing to see if trim list is pulling characters
-        Dim testTrim As String
-        testTrim = String.Join(",", getTrimChars)
-        MessageBox.Show(text:=testTrim)
+        'Dim testTrim As String
+        'testTrim = String.Join(",", getTrimChars)
+        'MessageBox.Show(text:=testTrim)
 
         newFile.Save(path)
         'this code works and adds a new tag at very bottom instead

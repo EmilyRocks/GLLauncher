@@ -23,7 +23,7 @@ Public Class miscFrm
         'turn on for sanity check during testing to see if trim list is pulling characters
         Dim testTrim As String
         testTrim = String.Join(",", getTrimChars)
-        MessageBox.Show(text:=testTrim)
+        'MessageBox.Show(text:=testTrim)
 
         'alternatively removes the trimming option
         If antiTrimBox.Checked Then
@@ -44,7 +44,7 @@ Public Class miscFrm
         'End If
 
         'turn on for sanity check during testing to see if cd works
-        MessageBox.Show(Cdmisctrigger1)
+        'MessageBox.Show(Cdmisctrigger1)
 
 
         newFile.Save(path)
