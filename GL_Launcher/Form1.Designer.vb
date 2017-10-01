@@ -96,7 +96,7 @@ Partial Class Cash
         'cGL1Textbox
         '
         Me.cGL1Textbox.FormattingEnabled = True
-        Me.cGL1Textbox.Items.AddRange(New Object() {"checksCheckNumber", "gl1", "gl2", "gl3", "gl4", "gl5", "gl6"})
+        Me.cGL1Textbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6"})
         Me.cGL1Textbox.Location = New System.Drawing.Point(4, 29)
         Me.cGL1Textbox.Name = "cGL1Textbox"
         Me.cGL1Textbox.Size = New System.Drawing.Size(132, 21)
@@ -158,7 +158,7 @@ Partial Class Cash
         'cGL6Textbox
         '
         Me.cGL6Textbox.FormattingEnabled = True
-        Me.cGL6Textbox.Items.AddRange(New Object() {"checksCheckNumber", "gl1", "gl2", "gl3", "gl4", "gl5", "gl6"})
+        Me.cGL6Textbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6"})
         Me.cGL6Textbox.Location = New System.Drawing.Point(710, 29)
         Me.cGL6Textbox.Name = "cGL6Textbox"
         Me.cGL6Textbox.Size = New System.Drawing.Size(132, 21)
@@ -177,7 +177,7 @@ Partial Class Cash
         'cGL5Textbox
         '
         Me.cGL5Textbox.FormattingEnabled = True
-        Me.cGL5Textbox.Items.AddRange(New Object() {"checksCheckNumber", "gl1", "gl2", "gl3", "gl4", "gl5", "gl6"})
+        Me.cGL5Textbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6"})
         Me.cGL5Textbox.Location = New System.Drawing.Point(569, 29)
         Me.cGL5Textbox.Name = "cGL5Textbox"
         Me.cGL5Textbox.Size = New System.Drawing.Size(132, 21)
@@ -196,7 +196,7 @@ Partial Class Cash
         'cGL4Textbox
         '
         Me.cGL4Textbox.FormattingEnabled = True
-        Me.cGL4Textbox.Items.AddRange(New Object() {"checksCheckNumber", "gl1", "gl2", "gl3", "gl4", "gl5", "gl6"})
+        Me.cGL4Textbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6"})
         Me.cGL4Textbox.Location = New System.Drawing.Point(428, 29)
         Me.cGL4Textbox.Name = "cGL4Textbox"
         Me.cGL4Textbox.Size = New System.Drawing.Size(132, 21)
@@ -215,7 +215,7 @@ Partial Class Cash
         'cGL3Textbox
         '
         Me.cGL3Textbox.FormattingEnabled = True
-        Me.cGL3Textbox.Items.AddRange(New Object() {"checksCheckNumber", "gl1", "gl2", "gl3", "gl4", "gl5", "gl6"})
+        Me.cGL3Textbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6"})
         Me.cGL3Textbox.Location = New System.Drawing.Point(287, 29)
         Me.cGL3Textbox.Name = "cGL3Textbox"
         Me.cGL3Textbox.Size = New System.Drawing.Size(132, 21)
@@ -225,7 +225,7 @@ Partial Class Cash
         'cGL2Textbox
         '
         Me.cGL2Textbox.FormattingEnabled = True
-        Me.cGL2Textbox.Items.AddRange(New Object() {"checksCheckNumber", "gl1", "gl2", "gl3", "gl4", "gl5", "gl6"})
+        Me.cGL2Textbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6"})
         Me.cGL2Textbox.Location = New System.Drawing.Point(145, 29)
         Me.cGL2Textbox.Name = "cGL2Textbox"
         Me.cGL2Textbox.Size = New System.Drawing.Size(132, 21)
@@ -326,7 +326,7 @@ Partial Class Cash
         'mGL6textbox
         '
         Me.mGL6textbox.FormattingEnabled = True
-        Me.mGL6textbox.Items.AddRange(New Object() {"checksCheckNumber", "gl1", "gl2", "gl3", "gl4", "gl5", "gl6"})
+        Me.mGL6textbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6"})
         Me.mGL6textbox.Location = New System.Drawing.Point(710, 29)
         Me.mGL6textbox.Name = "mGL6textbox"
         Me.mGL6textbox.Size = New System.Drawing.Size(132, 21)
@@ -345,7 +345,7 @@ Partial Class Cash
         'mGL5Textbox
         '
         Me.mGL5Textbox.FormattingEnabled = True
-        Me.mGL5Textbox.Items.AddRange(New Object() {"checksCheckNumber", "gl1", "gl2", "gl3", "gl4", "gl5", "gl6"})
+        Me.mGL5Textbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6"})
         Me.mGL5Textbox.Location = New System.Drawing.Point(569, 29)
         Me.mGL5Textbox.Name = "mGL5Textbox"
         Me.mGL5Textbox.Size = New System.Drawing.Size(132, 21)
@@ -364,7 +364,7 @@ Partial Class Cash
         'mGL4Textbox
         '
         Me.mGL4Textbox.FormattingEnabled = True
-        Me.mGL4Textbox.Items.AddRange(New Object() {"checksCheckNumber", "gl1", "gl2", "gl3", "gl4", "gl5", "gl6"})
+        Me.mGL4Textbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6"})
         Me.mGL4Textbox.Location = New System.Drawing.Point(428, 29)
         Me.mGL4Textbox.Name = "mGL4Textbox"
         Me.mGL4Textbox.Size = New System.Drawing.Size(132, 21)
@@ -383,7 +383,7 @@ Partial Class Cash
         'mGL3Textbox
         '
         Me.mGL3Textbox.FormattingEnabled = True
-        Me.mGL3Textbox.Items.AddRange(New Object() {"checksCheckNumber", "gl1", "gl2", "gl3", "gl4", "gl5", "gl6"})
+        Me.mGL3Textbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6"})
         Me.mGL3Textbox.Location = New System.Drawing.Point(287, 29)
         Me.mGL3Textbox.Name = "mGL3Textbox"
         Me.mGL3Textbox.Size = New System.Drawing.Size(132, 21)
@@ -393,7 +393,7 @@ Partial Class Cash
         'mGL2Textbox
         '
         Me.mGL2Textbox.FormattingEnabled = True
-        Me.mGL2Textbox.Items.AddRange(New Object() {"checksCheckNumber", "gl1", "gl2", "gl3", "gl4", "gl5", "gl6"})
+        Me.mGL2Textbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6"})
         Me.mGL2Textbox.Location = New System.Drawing.Point(145, 29)
         Me.mGL2Textbox.Name = "mGL2Textbox"
         Me.mGL2Textbox.Size = New System.Drawing.Size(132, 21)
@@ -430,7 +430,7 @@ Partial Class Cash
         'mGL1Textbox
         '
         Me.mGL1Textbox.FormattingEnabled = True
-        Me.mGL1Textbox.Items.AddRange(New Object() {"checksCheckNumber", "gl1", "gl2", "gl3", "gl4", "gl5", "gl6"})
+        Me.mGL1Textbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6"})
         Me.mGL1Textbox.Location = New System.Drawing.Point(4, 29)
         Me.mGL1Textbox.Name = "mGL1Textbox"
         Me.mGL1Textbox.Size = New System.Drawing.Size(132, 21)
@@ -492,7 +492,7 @@ Partial Class Cash
         'nGL6Textbox
         '
         Me.nGL6Textbox.FormattingEnabled = True
-        Me.nGL6Textbox.Items.AddRange(New Object() {"checksCheckNumber", "gl1", "gl2", "gl3", "gl4", "gl5", "gl6"})
+        Me.nGL6Textbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6"})
         Me.nGL6Textbox.Location = New System.Drawing.Point(710, 29)
         Me.nGL6Textbox.Name = "nGL6Textbox"
         Me.nGL6Textbox.Size = New System.Drawing.Size(132, 21)
@@ -511,7 +511,7 @@ Partial Class Cash
         'nGL5Textbox
         '
         Me.nGL5Textbox.FormattingEnabled = True
-        Me.nGL5Textbox.Items.AddRange(New Object() {"checksCheckNumber", "gl1", "gl2", "gl3", "gl4", "gl5", "gl6"})
+        Me.nGL5Textbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6"})
         Me.nGL5Textbox.Location = New System.Drawing.Point(569, 29)
         Me.nGL5Textbox.Name = "nGL5Textbox"
         Me.nGL5Textbox.Size = New System.Drawing.Size(132, 21)
@@ -530,7 +530,7 @@ Partial Class Cash
         'nGL4Textbox
         '
         Me.nGL4Textbox.FormattingEnabled = True
-        Me.nGL4Textbox.Items.AddRange(New Object() {"checksCheckNumber", "gl1", "gl2", "gl3", "gl4", "gl5", "gl6"})
+        Me.nGL4Textbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6"})
         Me.nGL4Textbox.Location = New System.Drawing.Point(428, 29)
         Me.nGL4Textbox.Name = "nGL4Textbox"
         Me.nGL4Textbox.Size = New System.Drawing.Size(132, 21)
@@ -549,7 +549,7 @@ Partial Class Cash
         'nGL3Textbox
         '
         Me.nGL3Textbox.FormattingEnabled = True
-        Me.nGL3Textbox.Items.AddRange(New Object() {"checksCheckNumber", "gl1", "gl2", "gl3", "gl4", "gl5", "gl6"})
+        Me.nGL3Textbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6"})
         Me.nGL3Textbox.Location = New System.Drawing.Point(287, 29)
         Me.nGL3Textbox.Name = "nGL3Textbox"
         Me.nGL3Textbox.Size = New System.Drawing.Size(132, 21)
@@ -559,7 +559,7 @@ Partial Class Cash
         'nGL2Textbox
         '
         Me.nGL2Textbox.FormattingEnabled = True
-        Me.nGL2Textbox.Items.AddRange(New Object() {"checksCheckNumber", "gl1", "gl2", "gl3", "gl4", "gl5", "gl6"})
+        Me.nGL2Textbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6"})
         Me.nGL2Textbox.Location = New System.Drawing.Point(145, 29)
         Me.nGL2Textbox.Name = "nGL2Textbox"
         Me.nGL2Textbox.Size = New System.Drawing.Size(132, 21)
@@ -596,7 +596,7 @@ Partial Class Cash
         'nGL1Textbox
         '
         Me.nGL1Textbox.FormattingEnabled = True
-        Me.nGL1Textbox.Items.AddRange(New Object() {"checksCheckNumber", "gl1", "gl2", "gl3", "gl4", "gl5", "gl6"})
+        Me.nGL1Textbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6"})
         Me.nGL1Textbox.Location = New System.Drawing.Point(4, 29)
         Me.nGL1Textbox.Name = "nGL1Textbox"
         Me.nGL1Textbox.Size = New System.Drawing.Size(132, 21)

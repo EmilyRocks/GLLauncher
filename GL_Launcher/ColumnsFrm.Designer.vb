@@ -43,6 +43,15 @@ Partial Class ColumnsFrm
         Me.ct1Textbox = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.amtFormatButton9 = New System.Windows.Forms.ComboBox()
+        Me.amtFormatButton8 = New System.Windows.Forms.ComboBox()
+        Me.amtFormatButton7 = New System.Windows.Forms.ComboBox()
+        Me.amtFormatButton6 = New System.Windows.Forms.ComboBox()
+        Me.amtFormatButton5 = New System.Windows.Forms.ComboBox()
+        Me.amtFormatButton4 = New System.Windows.Forms.ComboBox()
+        Me.amtFormatButton3 = New System.Windows.Forms.ComboBox()
+        Me.amtFormatButton2 = New System.Windows.Forms.ComboBox()
+        Me.amtFormatButton1 = New System.Windows.Forms.ComboBox()
         Me.dtFormatButton9 = New System.Windows.Forms.ComboBox()
         Me.dtFormatButton8 = New System.Windows.Forms.ComboBox()
         Me.dtFormatButton7 = New System.Windows.Forms.ComboBox()
@@ -81,6 +90,7 @@ Partial Class ColumnsFrm
         Me.cv1aTextbox = New System.Windows.Forms.ComboBox()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.DelimiterButton = New System.Windows.Forms.Button()
+        Me.padButton = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -296,6 +306,15 @@ Partial Class ColumnsFrm
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.amtFormatButton9)
+        Me.Panel2.Controls.Add(Me.amtFormatButton8)
+        Me.Panel2.Controls.Add(Me.amtFormatButton7)
+        Me.Panel2.Controls.Add(Me.amtFormatButton6)
+        Me.Panel2.Controls.Add(Me.amtFormatButton5)
+        Me.Panel2.Controls.Add(Me.amtFormatButton4)
+        Me.Panel2.Controls.Add(Me.amtFormatButton3)
+        Me.Panel2.Controls.Add(Me.amtFormatButton2)
+        Me.Panel2.Controls.Add(Me.amtFormatButton1)
         Me.Panel2.Controls.Add(Me.dtFormatButton9)
         Me.Panel2.Controls.Add(Me.dtFormatButton8)
         Me.Panel2.Controls.Add(Me.dtFormatButton7)
@@ -337,6 +356,105 @@ Partial Class ColumnsFrm
         Me.Panel2.Size = New System.Drawing.Size(1264, 109)
         Me.Panel2.TabIndex = 19
         Me.Panel2.Tag = "GL1 Type"
+        '
+        'amtFormatButton9
+        '
+        Me.amtFormatButton9.FormattingEnabled = True
+        Me.amtFormatButton9.Items.AddRange(New Object() {"debit", "credit", "absAmount", "noDecimal"})
+        Me.amtFormatButton9.Location = New System.Drawing.Point(1124, 83)
+        Me.amtFormatButton9.Name = "amtFormatButton9"
+        Me.amtFormatButton9.Size = New System.Drawing.Size(132, 21)
+        Me.amtFormatButton9.TabIndex = 45
+        Me.amtFormatButton9.Tag = ""
+        Me.amtFormatButton9.Visible = False
+        '
+        'amtFormatButton8
+        '
+        Me.amtFormatButton8.FormattingEnabled = True
+        Me.amtFormatButton8.Items.AddRange(New Object() {"debit", "credit", "absAmount", "noDecimal"})
+        Me.amtFormatButton8.Location = New System.Drawing.Point(982, 83)
+        Me.amtFormatButton8.Name = "amtFormatButton8"
+        Me.amtFormatButton8.Size = New System.Drawing.Size(132, 21)
+        Me.amtFormatButton8.TabIndex = 44
+        Me.amtFormatButton8.Tag = ""
+        Me.amtFormatButton8.Visible = False
+        '
+        'amtFormatButton7
+        '
+        Me.amtFormatButton7.FormattingEnabled = True
+        Me.amtFormatButton7.Items.AddRange(New Object() {"debit", "credit", "absAmount", "noDecimal"})
+        Me.amtFormatButton7.Location = New System.Drawing.Point(844, 83)
+        Me.amtFormatButton7.Name = "amtFormatButton7"
+        Me.amtFormatButton7.Size = New System.Drawing.Size(132, 21)
+        Me.amtFormatButton7.TabIndex = 43
+        Me.amtFormatButton7.Tag = ""
+        Me.amtFormatButton7.Visible = False
+        '
+        'amtFormatButton6
+        '
+        Me.amtFormatButton6.FormattingEnabled = True
+        Me.amtFormatButton6.Items.AddRange(New Object() {"debit", "credit", "absAmount", "noDecimal"})
+        Me.amtFormatButton6.Location = New System.Drawing.Point(704, 83)
+        Me.amtFormatButton6.Name = "amtFormatButton6"
+        Me.amtFormatButton6.Size = New System.Drawing.Size(132, 21)
+        Me.amtFormatButton6.TabIndex = 42
+        Me.amtFormatButton6.Tag = ""
+        Me.amtFormatButton6.Visible = False
+        '
+        'amtFormatButton5
+        '
+        Me.amtFormatButton5.FormattingEnabled = True
+        Me.amtFormatButton5.Items.AddRange(New Object() {"debit", "credit", "absAmount", "noDecimal"})
+        Me.amtFormatButton5.Location = New System.Drawing.Point(564, 83)
+        Me.amtFormatButton5.Name = "amtFormatButton5"
+        Me.amtFormatButton5.Size = New System.Drawing.Size(132, 21)
+        Me.amtFormatButton5.TabIndex = 41
+        Me.amtFormatButton5.Tag = ""
+        Me.amtFormatButton5.Visible = False
+        '
+        'amtFormatButton4
+        '
+        Me.amtFormatButton4.FormattingEnabled = True
+        Me.amtFormatButton4.Items.AddRange(New Object() {"debit", "credit", "absAmount", "noDecimal"})
+        Me.amtFormatButton4.Location = New System.Drawing.Point(424, 83)
+        Me.amtFormatButton4.Name = "amtFormatButton4"
+        Me.amtFormatButton4.Size = New System.Drawing.Size(132, 21)
+        Me.amtFormatButton4.TabIndex = 40
+        Me.amtFormatButton4.Tag = ""
+        Me.amtFormatButton4.Visible = False
+        '
+        'amtFormatButton3
+        '
+        Me.amtFormatButton3.FormattingEnabled = True
+        Me.amtFormatButton3.Items.AddRange(New Object() {"debit", "credit", "absAmount", "noDecimal"})
+        Me.amtFormatButton3.Location = New System.Drawing.Point(284, 83)
+        Me.amtFormatButton3.Name = "amtFormatButton3"
+        Me.amtFormatButton3.Size = New System.Drawing.Size(132, 21)
+        Me.amtFormatButton3.TabIndex = 39
+        Me.amtFormatButton3.Tag = ""
+        Me.amtFormatButton3.Visible = False
+        '
+        'amtFormatButton2
+        '
+        Me.amtFormatButton2.FormattingEnabled = True
+        Me.amtFormatButton2.Items.AddRange(New Object() {"debit", "credit", "absAmount", "noDecimal"})
+        Me.amtFormatButton2.Location = New System.Drawing.Point(144, 83)
+        Me.amtFormatButton2.Name = "amtFormatButton2"
+        Me.amtFormatButton2.Size = New System.Drawing.Size(132, 21)
+        Me.amtFormatButton2.TabIndex = 38
+        Me.amtFormatButton2.Tag = ""
+        Me.amtFormatButton2.Visible = False
+        '
+        'amtFormatButton1
+        '
+        Me.amtFormatButton1.FormattingEnabled = True
+        Me.amtFormatButton1.Items.AddRange(New Object() {"debit", "credit", "absAmount", "noDecimal"})
+        Me.amtFormatButton1.Location = New System.Drawing.Point(4, 83)
+        Me.amtFormatButton1.Name = "amtFormatButton1"
+        Me.amtFormatButton1.Size = New System.Drawing.Size(132, 21)
+        Me.amtFormatButton1.TabIndex = 37
+        Me.amtFormatButton1.Tag = ""
+        Me.amtFormatButton1.Visible = False
         '
         'dtFormatButton9
         '
@@ -440,7 +558,7 @@ Partial Class ColumnsFrm
         'cv9bTextbox
         '
         Me.cv9bTextbox.FormattingEnabled = True
-        Me.cv9bTextbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6", "account", "accountName", "amount", "beginDate", "checkDate", "checksCheckNumber", "checksEmpId", "checksEmpNameFirst", "checksEmpNameLast", "checksEmpNameMiddle", "coID", "credit", "customField1", "customField2", "customField3", "customField4", "customField5", "debit", "detCode", "detType", "endDate", "endofMonthDate", "hours", "laborDistCC1Code", "laborDistCC2Code", "laborDistCC3Code", "laborDistEmpID", "process", "processDate", "rowSource", "rulesEmpNameFirst", "rulesEmpNameLast"})
+        Me.cv9bTextbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6", "account", "accountName", "amount", "agencyPayableTo", "agencyCheckNumber", "beginDate", "checkDate", "checksCheckNumber", "checksEmpId", "checksEmpNameFirst", "checksEmpNameLast", "checksEmpNameMiddle", "checksTransaction", "coID", "customField1", "customField2", "customField3", "customField4", "customField5", "cCostCenterMatrixID", "detCode", "detType", "empNameFirst", "empNameMiddle", "empNameLast", "empNameSource", "endDate", "endofMonthDate", "hours", "laborDistCC1Code", "laborDistCC2Code", "laborDistCC3Code", "laborDistCC1Name", "laborDistCC2Name", "laborDistCC3Name", "laborDistEmpID", "process", "processDate", "row", "rowSource", "rulesEmpID", "rulesEmpNameFirst", "rulesEmpNameLast", "rulesTransaction", "rulesVoucherNumber"})
         Me.cv9bTextbox.Location = New System.Drawing.Point(1124, 56)
         Me.cv9bTextbox.Name = "cv9bTextbox"
         Me.cv9bTextbox.Size = New System.Drawing.Size(132, 21)
@@ -450,7 +568,7 @@ Partial Class ColumnsFrm
         'cv8bTextbox
         '
         Me.cv8bTextbox.FormattingEnabled = True
-        Me.cv8bTextbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6", "account", "accountName", "amount", "beginDate", "checkDate", "checksCheckNumber", "checksEmpId", "checksEmpNameFirst", "checksEmpNameLast", "checksEmpNameMiddle", "coID", "credit", "customField1", "customField2", "customField3", "customField4", "customField5", "debit", "detCode", "detType", "endDate", "endofMonthDate", "hours", "laborDistCC1Code", "laborDistCC2Code", "laborDistCC3Code", "laborDistEmpID", "process", "processDate", "rowSource", "rulesEmpNameFirst", "rulesEmpNameLast"})
+        Me.cv8bTextbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6", "account", "accountName", "amount", "agencyPayableTo", "agencyCheckNumber", "beginDate", "checkDate", "checksCheckNumber", "checksEmpId", "checksEmpNameFirst", "checksEmpNameLast", "checksEmpNameMiddle", "checksTransaction", "coID", "customField1", "customField2", "customField3", "customField4", "customField5", "cCostCenterMatrixID", "detCode", "detType", "empNameFirst", "empNameMiddle", "empNameLast", "empNameSource", "endDate", "endofMonthDate", "hours", "laborDistCC1Code", "laborDistCC2Code", "laborDistCC3Code", "laborDistCC1Name", "laborDistCC2Name", "laborDistCC3Name", "laborDistEmpID", "process", "processDate", "row", "rowSource", "rulesEmpID", "rulesEmpNameFirst", "rulesEmpNameLast", "rulesTransaction", "rulesVoucherNumber"})
         Me.cv8bTextbox.Location = New System.Drawing.Point(984, 56)
         Me.cv8bTextbox.Name = "cv8bTextbox"
         Me.cv8bTextbox.Size = New System.Drawing.Size(132, 21)
@@ -460,7 +578,7 @@ Partial Class ColumnsFrm
         'cv7bTextbox
         '
         Me.cv7bTextbox.FormattingEnabled = True
-        Me.cv7bTextbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6", "account", "accountName", "amount", "beginDate", "checkDate", "checksCheckNumber", "checksEmpId", "checksEmpNameFirst", "checksEmpNameLast", "checksEmpNameMiddle", "coID", "credit", "customField1", "customField2", "customField3", "customField4", "customField5", "debit", "detCode", "detType", "endDate", "endofMonthDate", "hours", "laborDistCC1Code", "laborDistCC2Code", "laborDistCC3Code", "laborDistEmpID", "process", "processDate", "rowSource", "rulesEmpNameFirst", "rulesEmpNameLast"})
+        Me.cv7bTextbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6", "account", "accountName", "amount", "agencyPayableTo", "agencyCheckNumber", "beginDate", "checkDate", "checksCheckNumber", "checksEmpId", "checksEmpNameFirst", "checksEmpNameLast", "checksEmpNameMiddle", "checksTransaction", "coID", "customField1", "customField2", "customField3", "customField4", "customField5", "cCostCenterMatrixID", "detCode", "detType", "empNameFirst", "empNameMiddle", "empNameLast", "empNameSource", "endDate", "endofMonthDate", "hours", "laborDistCC1Code", "laborDistCC2Code", "laborDistCC3Code", "laborDistCC1Name", "laborDistCC2Name", "laborDistCC3Name", "laborDistEmpID", "process", "processDate", "row", "rowSource", "rulesEmpID", "rulesEmpNameFirst", "rulesEmpNameLast", "rulesTransaction", "rulesVoucherNumber"})
         Me.cv7bTextbox.Location = New System.Drawing.Point(845, 56)
         Me.cv7bTextbox.Name = "cv7bTextbox"
         Me.cv7bTextbox.Size = New System.Drawing.Size(132, 21)
@@ -470,7 +588,7 @@ Partial Class ColumnsFrm
         'cv6bTextbox
         '
         Me.cv6bTextbox.FormattingEnabled = True
-        Me.cv6bTextbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6", "account", "accountName", "amount", "beginDate", "checkDate", "checksCheckNumber", "checksEmpId", "checksEmpNameFirst", "checksEmpNameLast", "checksEmpNameMiddle", "coID", "credit", "customField1", "customField2", "customField3", "customField4", "customField5", "debit", "detCode", "detType", "endDate", "endofMonthDate", "hours", "laborDistCC1Code", "laborDistCC2Code", "laborDistCC3Code", "laborDistEmpID", "process", "processDate", "rowSource", "rulesEmpNameFirst", "rulesEmpNameLast"})
+        Me.cv6bTextbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6", "account", "accountName", "amount", "agencyPayableTo", "agencyCheckNumber", "beginDate", "checkDate", "checksCheckNumber", "checksEmpId", "checksEmpNameFirst", "checksEmpNameLast", "checksEmpNameMiddle", "checksTransaction", "coID", "customField1", "customField2", "customField3", "customField4", "customField5", "cCostCenterMatrixID", "detCode", "detType", "empNameFirst", "empNameMiddle", "empNameLast", "empNameSource", "endDate", "endofMonthDate", "hours", "laborDistCC1Code", "laborDistCC2Code", "laborDistCC3Code", "laborDistCC1Name", "laborDistCC2Name", "laborDistCC3Name", "laborDistEmpID", "process", "processDate", "row", "rowSource", "rulesEmpID", "rulesEmpNameFirst", "rulesEmpNameLast", "rulesTransaction", "rulesVoucherNumber"})
         Me.cv6bTextbox.Location = New System.Drawing.Point(704, 56)
         Me.cv6bTextbox.Name = "cv6bTextbox"
         Me.cv6bTextbox.Size = New System.Drawing.Size(132, 21)
@@ -480,7 +598,7 @@ Partial Class ColumnsFrm
         'cv5bTextbox
         '
         Me.cv5bTextbox.FormattingEnabled = True
-        Me.cv5bTextbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6", "account", "accountName", "amount", "beginDate", "checkDate", "checksCheckNumber", "checksEmpId", "checksEmpNameFirst", "checksEmpNameLast", "checksEmpNameMiddle", "coID", "credit", "customField1", "customField2", "customField3", "customField4", "customField5", "debit", "detCode", "detType", "endDate", "endofMonthDate", "hours", "laborDistCC1Code", "laborDistCC2Code", "laborDistCC3Code", "laborDistEmpID", "process", "processDate", "rowSource", "rulesEmpNameFirst", "rulesEmpNameLast"})
+        Me.cv5bTextbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6", "account", "accountName", "amount", "agencyPayableTo", "agencyCheckNumber", "beginDate", "checkDate", "checksCheckNumber", "checksEmpId", "checksEmpNameFirst", "checksEmpNameLast", "checksEmpNameMiddle", "checksTransaction", "coID", "customField1", "customField2", "customField3", "customField4", "customField5", "cCostCenterMatrixID", "detCode", "detType", "empNameFirst", "empNameMiddle", "empNameLast", "empNameSource", "endDate", "endofMonthDate", "hours", "laborDistCC1Code", "laborDistCC2Code", "laborDistCC3Code", "laborDistCC1Name", "laborDistCC2Name", "laborDistCC3Name", "laborDistEmpID", "process", "processDate", "row", "rowSource", "rulesEmpID", "rulesEmpNameFirst", "rulesEmpNameLast", "rulesTransaction", "rulesVoucherNumber"})
         Me.cv5bTextbox.Location = New System.Drawing.Point(564, 56)
         Me.cv5bTextbox.Name = "cv5bTextbox"
         Me.cv5bTextbox.Size = New System.Drawing.Size(132, 21)
@@ -490,7 +608,7 @@ Partial Class ColumnsFrm
         'cv4bTextbox
         '
         Me.cv4bTextbox.FormattingEnabled = True
-        Me.cv4bTextbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6", "account", "accountName", "amount", "beginDate", "checkDate", "checksCheckNumber", "checksEmpId", "checksEmpNameFirst", "checksEmpNameLast", "checksEmpNameMiddle", "coID", "credit", "customField1", "customField2", "customField3", "customField4", "customField5", "debit", "detCode", "detType", "endDate", "endofMonthDate", "hours", "laborDistCC1Code", "laborDistCC2Code", "laborDistCC3Code", "laborDistEmpID", "process", "processDate", "rowSource", "rulesEmpNameFirst", "rulesEmpNameLast"})
+        Me.cv4bTextbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6", "account", "accountName", "amount", "agencyPayableTo", "agencyCheckNumber", "beginDate", "checkDate", "checksCheckNumber", "checksEmpId", "checksEmpNameFirst", "checksEmpNameLast", "checksEmpNameMiddle", "checksTransaction", "coID", "customField1", "customField2", "customField3", "customField4", "customField5", "cCostCenterMatrixID", "detCode", "detType", "empNameFirst", "empNameMiddle", "empNameLast", "empNameSource", "endDate", "endofMonthDate", "hours", "laborDistCC1Code", "laborDistCC2Code", "laborDistCC3Code", "laborDistCC1Name", "laborDistCC2Name", "laborDistCC3Name", "laborDistEmpID", "process", "processDate", "row", "rowSource", "rulesEmpID", "rulesEmpNameFirst", "rulesEmpNameLast", "rulesTransaction", "rulesVoucherNumber"})
         Me.cv4bTextbox.Location = New System.Drawing.Point(424, 56)
         Me.cv4bTextbox.Name = "cv4bTextbox"
         Me.cv4bTextbox.Size = New System.Drawing.Size(132, 21)
@@ -500,7 +618,7 @@ Partial Class ColumnsFrm
         'cv3bTextbox
         '
         Me.cv3bTextbox.FormattingEnabled = True
-        Me.cv3bTextbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6", "account", "accountName", "amount", "beginDate", "checkDate", "checksCheckNumber", "checksEmpId", "checksEmpNameFirst", "checksEmpNameLast", "checksEmpNameMiddle", "coID", "credit", "customField1", "customField2", "customField3", "customField4", "customField5", "debit", "detCode", "detType", "endDate", "endofMonthDate", "hours", "laborDistCC1Code", "laborDistCC2Code", "laborDistCC3Code", "laborDistEmpID", "process", "processDate", "rowSource", "rulesEmpNameFirst", "rulesEmpNameLast"})
+        Me.cv3bTextbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6", "account", "accountName", "amount", "agencyPayableTo", "agencyCheckNumber", "beginDate", "checkDate", "checksCheckNumber", "checksEmpId", "checksEmpNameFirst", "checksEmpNameLast", "checksEmpNameMiddle", "checksTransaction", "coID", "customField1", "customField2", "customField3", "customField4", "customField5", "cCostCenterMatrixID", "detCode", "detType", "empNameFirst", "empNameMiddle", "empNameLast", "empNameSource", "endDate", "endofMonthDate", "hours", "laborDistCC1Code", "laborDistCC2Code", "laborDistCC3Code", "laborDistCC1Name", "laborDistCC2Name", "laborDistCC3Name", "laborDistEmpID", "process", "processDate", "row", "rowSource", "rulesEmpID", "rulesEmpNameFirst", "rulesEmpNameLast", "rulesTransaction", "rulesVoucherNumber"})
         Me.cv3bTextbox.Location = New System.Drawing.Point(284, 56)
         Me.cv3bTextbox.Name = "cv3bTextbox"
         Me.cv3bTextbox.Size = New System.Drawing.Size(132, 21)
@@ -510,7 +628,7 @@ Partial Class ColumnsFrm
         'cv2bTextbox
         '
         Me.cv2bTextbox.FormattingEnabled = True
-        Me.cv2bTextbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6", "account", "accountName", "amount", "beginDate", "checkDate", "checksCheckNumber", "checksEmpId", "checksEmpNameFirst", "checksEmpNameLast", "checksEmpNameMiddle", "coID", "credit", "customField1", "customField2", "customField3", "customField4", "customField5", "debit", "detCode", "detType", "endDate", "endofMonthDate", "hours", "laborDistCC1Code", "laborDistCC2Code", "laborDistCC3Code", "laborDistEmpID", "process", "processDate", "rowSource", "rulesEmpNameFirst", "rulesEmpNameLast"})
+        Me.cv2bTextbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6", "account", "accountName", "amount", "agencyPayableTo", "agencyCheckNumber", "beginDate", "checkDate", "checksCheckNumber", "checksEmpId", "checksEmpNameFirst", "checksEmpNameLast", "checksEmpNameMiddle", "checksTransaction", "coID", "customField1", "customField2", "customField3", "customField4", "customField5", "cCostCenterMatrixID", "detCode", "detType", "empNameFirst", "empNameMiddle", "empNameLast", "empNameSource", "endDate", "endofMonthDate", "hours", "laborDistCC1Code", "laborDistCC2Code", "laborDistCC3Code", "laborDistCC1Name", "laborDistCC2Name", "laborDistCC3Name", "laborDistEmpID", "process", "processDate", "row", "rowSource", "rulesEmpID", "rulesEmpNameFirst", "rulesEmpNameLast", "rulesTransaction", "rulesVoucherNumber"})
         Me.cv2bTextbox.Location = New System.Drawing.Point(145, 56)
         Me.cv2bTextbox.Name = "cv2bTextbox"
         Me.cv2bTextbox.Size = New System.Drawing.Size(132, 21)
@@ -520,7 +638,7 @@ Partial Class ColumnsFrm
         'cv1bTextbox
         '
         Me.cv1bTextbox.FormattingEnabled = True
-        Me.cv1bTextbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6", "account", "accountName", "amount", "beginDate", "checkDate", "checksCheckNumber", "checksEmpId", "checksEmpNameFirst", "checksEmpNameLast", "checksEmpNameMiddle", "coID", "credit", "customField1", "customField2", "customField3", "customField4", "customField5", "debit", "detCode", "detType", "endDate", "endofMonthDate", "hours", "laborDistCC1Code", "laborDistCC2Code", "laborDistCC3Code", "laborDistEmpID", "process", "processDate", "rowSource", "rulesEmpNameFirst", "rulesEmpNameLast"})
+        Me.cv1bTextbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6", "account", "accountName", "amount", "agencyPayableTo", "agencyCheckNumber", "beginDate", "checkDate", "checksCheckNumber", "checksEmpId", "checksEmpNameFirst", "checksEmpNameLast", "checksEmpNameMiddle", "checksTransaction", "coID", "customField1", "customField2", "customField3", "customField4", "customField5", "cCostCenterMatrixID", "detCode", "detType", "empNameFirst", "empNameMiddle", "empNameLast", "empNameSource", "endDate", "endofMonthDate", "hours", "laborDistCC1Code", "laborDistCC2Code", "laborDistCC3Code", "laborDistCC1Name", "laborDistCC2Name", "laborDistCC3Name", "laborDistEmpID", "process", "processDate", "row", "rowSource", "rulesEmpID", "rulesEmpNameFirst", "rulesEmpNameLast", "rulesTransaction", "rulesVoucherNumber"})
         Me.cv1bTextbox.Location = New System.Drawing.Point(4, 56)
         Me.cv1bTextbox.Name = "cv1bTextbox"
         Me.cv1bTextbox.Size = New System.Drawing.Size(132, 21)
@@ -557,7 +675,7 @@ Partial Class ColumnsFrm
         'cv9aTextbox
         '
         Me.cv9aTextbox.FormattingEnabled = True
-        Me.cv9aTextbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6", "account", "accountName", "amount", "beginDate", "checkDate", "checksCheckNumber", "checksEmpId", "checksEmpNameFirst", "checksEmpNameLast", "checksEmpNameMiddle", "coID", "credit", "customField1", "customField2", "customField3", "customField4", "customField5", "debit", "detCode", "detType", "endDate", "endofMonthDate", "hours", "laborDistCC1Code", "laborDistCC2Code", "laborDistCC3Code", "laborDistEmpID", "process", "processDate", "rowSource", "rulesEmpNameFirst", "rulesEmpNameLast"})
+        Me.cv9aTextbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6", "account", "accountName", "amount", "agencyPayableTo", "agencyCheckNumber", "beginDate", "cd", "checkDate", "checksCheckNumber", "checksEmpId", "checksEmpNameFirst", "checksEmpNameLast", "checksEmpNameMiddle", "checksTransaction", "coID", "customField1", "customField2", "customField3", "customField4", "customField5", "cCostCenterMatrixID", "detCode", "detType", "empNameFirst", "empNameMiddle", "empNameLast", "empNameSource", "endDate", "endofMonthDate", "hours", "laborDistCC1Code", "laborDistCC2Code", "laborDistCC3Code", "laborDistCC1Name", "laborDistCC2Name", "laborDistCC3Name", "laborDistEmpID", "process", "processDate", "row", "rowSource", "rulesEmpID", "rulesEmpNameFirst", "rulesEmpNameLast", "rulesTransaction", "rulesVoucherNumber"})
         Me.cv9aTextbox.Location = New System.Drawing.Point(1124, 29)
         Me.cv9aTextbox.Name = "cv9aTextbox"
         Me.cv9aTextbox.Size = New System.Drawing.Size(132, 21)
@@ -566,7 +684,7 @@ Partial Class ColumnsFrm
         'cv8aTextbox
         '
         Me.cv8aTextbox.FormattingEnabled = True
-        Me.cv8aTextbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6", "account", "accountName", "amount", "beginDate", "checkDate", "checksCheckNumber", "checksEmpId", "checksEmpNameFirst", "checksEmpNameLast", "checksEmpNameMiddle", "coID", "credit", "customField1", "customField2", "customField3", "customField4", "customField5", "debit", "detCode", "detType", "endDate", "endofMonthDate", "hours", "laborDistCC1Code", "laborDistCC2Code", "laborDistCC3Code", "laborDistEmpID", "process", "processDate", "rowSource", "rulesEmpNameFirst", "rulesEmpNameLast"})
+        Me.cv8aTextbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6", "account", "accountName", "amount", "agencyPayableTo", "agencyCheckNumber", "beginDate", "cd", "checkDate", "checksCheckNumber", "checksEmpId", "checksEmpNameFirst", "checksEmpNameLast", "checksEmpNameMiddle", "checksTransaction", "coID", "customField1", "customField2", "customField3", "customField4", "customField5", "cCostCenterMatrixID", "detCode", "detType", "empNameFirst", "empNameMiddle", "empNameLast", "empNameSource", "endDate", "endofMonthDate", "hours", "laborDistCC1Code", "laborDistCC2Code", "laborDistCC3Code", "laborDistCC1Name", "laborDistCC2Name", "laborDistCC3Name", "laborDistEmpID", "process", "processDate", "row", "rowSource", "rulesEmpID", "rulesEmpNameFirst", "rulesEmpNameLast", "rulesTransaction", "rulesVoucherNumber"})
         Me.cv8aTextbox.Location = New System.Drawing.Point(984, 29)
         Me.cv8aTextbox.Name = "cv8aTextbox"
         Me.cv8aTextbox.Size = New System.Drawing.Size(132, 21)
@@ -575,7 +693,7 @@ Partial Class ColumnsFrm
         'cv7aTextbox
         '
         Me.cv7aTextbox.FormattingEnabled = True
-        Me.cv7aTextbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6", "account", "accountName", "amount", "beginDate", "checkDate", "checksCheckNumber", "checksEmpId", "checksEmpNameFirst", "checksEmpNameLast", "checksEmpNameMiddle", "coID", "credit", "customField1", "customField2", "customField3", "customField4", "customField5", "debit", "detCode", "detType", "endDate", "endofMonthDate", "hours", "laborDistCC1Code", "laborDistCC2Code", "laborDistCC3Code", "laborDistEmpID", "process", "processDate", "rowSource", "rulesEmpNameFirst", "rulesEmpNameLast"})
+        Me.cv7aTextbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6", "account", "accountName", "amount", "agencyPayableTo", "agencyCheckNumber", "beginDate", "cd", "checkDate", "checksCheckNumber", "checksEmpId", "checksEmpNameFirst", "checksEmpNameLast", "checksEmpNameMiddle", "checksTransaction", "coID", "customField1", "customField2", "customField3", "customField4", "customField5", "cCostCenterMatrixID", "detCode", "detType", "empNameFirst", "empNameMiddle", "empNameLast", "empNameSource", "endDate", "endofMonthDate", "hours", "laborDistCC1Code", "laborDistCC2Code", "laborDistCC3Code", "laborDistCC1Name", "laborDistCC2Name", "laborDistCC3Name", "laborDistEmpID", "process", "processDate", "row", "rowSource", "rulesEmpID", "rulesEmpNameFirst", "rulesEmpNameLast", "rulesTransaction", "rulesVoucherNumber"})
         Me.cv7aTextbox.Location = New System.Drawing.Point(844, 29)
         Me.cv7aTextbox.Name = "cv7aTextbox"
         Me.cv7aTextbox.Size = New System.Drawing.Size(132, 21)
@@ -584,7 +702,7 @@ Partial Class ColumnsFrm
         'cv6aTextbox
         '
         Me.cv6aTextbox.FormattingEnabled = True
-        Me.cv6aTextbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6", "account", "accountName", "amount", "beginDate", "checkDate", "checksCheckNumber", "checksEmpId", "checksEmpNameFirst", "checksEmpNameLast", "checksEmpNameMiddle", "coID", "credit", "customField1", "customField2", "customField3", "customField4", "customField5", "debit", "detCode", "detType", "endDate", "endofMonthDate", "hours", "laborDistCC1Code", "laborDistCC2Code", "laborDistCC3Code", "laborDistEmpID", "process", "processDate", "rowSource", "rulesEmpNameFirst", "rulesEmpNameLast"})
+        Me.cv6aTextbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6", "account", "accountName", "amount", "agencyPayableTo", "agencyCheckNumber", "beginDate", "cd", "checkDate", "checksCheckNumber", "checksEmpId", "checksEmpNameFirst", "checksEmpNameLast", "checksEmpNameMiddle", "checksTransaction", "coID", "customField1", "customField2", "customField3", "customField4", "customField5", "cCostCenterMatrixID", "detCode", "detType", "empNameFirst", "empNameMiddle", "empNameLast", "empNameSource", "endDate", "endofMonthDate", "hours", "laborDistCC1Code", "laborDistCC2Code", "laborDistCC3Code", "laborDistCC1Name", "laborDistCC2Name", "laborDistCC3Name", "laborDistEmpID", "process", "processDate", "row", "rowSource", "rulesEmpID", "rulesEmpNameFirst", "rulesEmpNameLast", "rulesTransaction", "rulesVoucherNumber"})
         Me.cv6aTextbox.Location = New System.Drawing.Point(704, 29)
         Me.cv6aTextbox.Name = "cv6aTextbox"
         Me.cv6aTextbox.Size = New System.Drawing.Size(132, 21)
@@ -602,7 +720,7 @@ Partial Class ColumnsFrm
         'cv5aTextbox
         '
         Me.cv5aTextbox.FormattingEnabled = True
-        Me.cv5aTextbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6", "account", "accountName", "amount", "beginDate", "checkDate", "checksCheckNumber", "checksEmpId", "checksEmpNameFirst", "checksEmpNameLast", "checksEmpNameMiddle", "coID", "credit", "customField1", "customField2", "customField3", "customField4", "customField5", "debit", "detCode", "detType", "endDate", "endofMonthDate", "hours", "laborDistCC1Code", "laborDistCC2Code", "laborDistCC3Code", "laborDistEmpID", "process", "processDate", "rowSource", "rulesEmpNameFirst", "rulesEmpNameLast"})
+        Me.cv5aTextbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6", "account", "accountName", "amount", "agencyPayableTo", "agencyCheckNumber", "beginDate", "cd", "checkDate", "checksCheckNumber", "checksEmpId", "checksEmpNameFirst", "checksEmpNameLast", "checksEmpNameMiddle", "checksTransaction", "coID", "customField1", "customField2", "customField3", "customField4", "customField5", "cCostCenterMatrixID", "detCode", "detType", "empNameFirst", "empNameMiddle", "empNameLast", "empNameSource", "endDate", "endofMonthDate", "hours", "laborDistCC1Code", "laborDistCC2Code", "laborDistCC3Code", "laborDistCC1Name", "laborDistCC2Name", "laborDistCC3Name", "laborDistEmpID", "process", "processDate", "row", "rowSource", "rulesEmpID", "rulesEmpNameFirst", "rulesEmpNameLast", "rulesTransaction", "rulesVoucherNumber"})
         Me.cv5aTextbox.Location = New System.Drawing.Point(564, 29)
         Me.cv5aTextbox.Name = "cv5aTextbox"
         Me.cv5aTextbox.Size = New System.Drawing.Size(132, 21)
@@ -620,7 +738,7 @@ Partial Class ColumnsFrm
         'cv4aTextbox
         '
         Me.cv4aTextbox.FormattingEnabled = True
-        Me.cv4aTextbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6", "account", "accountName", "amount", "beginDate", "checkDate", "checksCheckNumber", "checksEmpId", "checksEmpNameFirst", "checksEmpNameLast", "checksEmpNameMiddle", "coID", "credit", "customField1", "customField2", "customField3", "customField4", "customField5", "debit", "detCode", "detType", "endDate", "endofMonthDate", "hours", "laborDistCC1Code", "laborDistCC2Code", "laborDistCC3Code", "laborDistEmpID", "process", "processDate", "rowSource", "rulesEmpNameFirst", "rulesEmpNameLast"})
+        Me.cv4aTextbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6", "account", "accountName", "amount", "agencyPayableTo", "agencyCheckNumber", "beginDate", "cd", "checkDate", "checksCheckNumber", "checksEmpId", "checksEmpNameFirst", "checksEmpNameLast", "checksEmpNameMiddle", "checksTransaction", "coID", "customField1", "customField2", "customField3", "customField4", "customField5", "cCostCenterMatrixID", "detCode", "detType", "empNameFirst", "empNameMiddle", "empNameLast", "empNameSource", "endDate", "endofMonthDate", "hours", "laborDistCC1Code", "laborDistCC2Code", "laborDistCC3Code", "laborDistCC1Name", "laborDistCC2Name", "laborDistCC3Name", "laborDistEmpID", "process", "processDate", "row", "rowSource", "rulesEmpID", "rulesEmpNameFirst", "rulesEmpNameLast", "rulesTransaction", "rulesVoucherNumber"})
         Me.cv4aTextbox.Location = New System.Drawing.Point(424, 29)
         Me.cv4aTextbox.Name = "cv4aTextbox"
         Me.cv4aTextbox.Size = New System.Drawing.Size(132, 21)
@@ -638,7 +756,7 @@ Partial Class ColumnsFrm
         'cv3aTextbox
         '
         Me.cv3aTextbox.FormattingEnabled = True
-        Me.cv3aTextbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6", "account", "accountName", "amount", "beginDate", "checkDate", "checksCheckNumber", "checksEmpId", "checksEmpNameFirst", "checksEmpNameLast", "checksEmpNameMiddle", "coID", "credit", "customField1", "customField2", "customField3", "customField4", "customField5", "debit", "detCode", "detType", "endDate", "endofMonthDate", "hours", "laborDistCC1Code", "laborDistCC2Code", "laborDistCC3Code", "laborDistEmpID", "process", "processDate", "rowSource", "rulesEmpNameFirst", "rulesEmpNameLast"})
+        Me.cv3aTextbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6", "account", "accountName", "amount", "agencyPayableTo", "agencyCheckNumber", "beginDate", "cd", "checkDate", "checksCheckNumber", "checksEmpId", "checksEmpNameFirst", "checksEmpNameLast", "checksEmpNameMiddle", "checksTransaction", "coID", "customField1", "customField2", "customField3", "customField4", "customField5", "cCostCenterMatrixID", "detCode", "detType", "empNameFirst", "empNameMiddle", "empNameLast", "empNameSource", "endDate", "endofMonthDate", "hours", "laborDistCC1Code", "laborDistCC2Code", "laborDistCC3Code", "laborDistCC1Name", "laborDistCC2Name", "laborDistCC3Name", "laborDistEmpID", "process", "processDate", "row", "rowSource", "rulesEmpID", "rulesEmpNameFirst", "rulesEmpNameLast", "rulesTransaction", "rulesVoucherNumber"})
         Me.cv3aTextbox.Location = New System.Drawing.Point(284, 29)
         Me.cv3aTextbox.Name = "cv3aTextbox"
         Me.cv3aTextbox.Size = New System.Drawing.Size(132, 21)
@@ -647,7 +765,7 @@ Partial Class ColumnsFrm
         'cv2aTextbox
         '
         Me.cv2aTextbox.FormattingEnabled = True
-        Me.cv2aTextbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6", "account", "accountName", "amount", "beginDate", "checkDate", "checksCheckNumber", "checksEmpId", "checksEmpNameFirst", "checksEmpNameLast", "checksEmpNameMiddle", "coID", "credit", "customField1", "customField2", "customField3", "customField4", "customField5", "debit", "detCode", "detType", "endDate", "endofMonthDate", "hours", "laborDistCC1Code", "laborDistCC2Code", "laborDistCC3Code", "laborDistEmpID", "process", "processDate", "rowSource", "rulesEmpNameFirst", "rulesEmpNameLast"})
+        Me.cv2aTextbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6", "account", "accountName", "amount", "agencyPayableTo", "agencyCheckNumber", "beginDate", "cd", "checkDate", "checksCheckNumber", "checksEmpId", "checksEmpNameFirst", "checksEmpNameLast", "checksEmpNameMiddle", "checksTransaction", "coID", "customField1", "customField2", "customField3", "customField4", "customField5", "cCostCenterMatrixID", "detCode", "detType", "empNameFirst", "empNameMiddle", "empNameLast", "empNameSource", "endDate", "endofMonthDate", "hours", "laborDistCC1Code", "laborDistCC2Code", "laborDistCC3Code", "laborDistCC1Name", "laborDistCC2Name", "laborDistCC3Name", "laborDistEmpID", "process", "processDate", "row", "rowSource", "rulesEmpID", "rulesEmpNameFirst", "rulesEmpNameLast", "rulesTransaction", "rulesVoucherNumber"})
         Me.cv2aTextbox.Location = New System.Drawing.Point(144, 29)
         Me.cv2aTextbox.Name = "cv2aTextbox"
         Me.cv2aTextbox.Size = New System.Drawing.Size(132, 21)
@@ -683,7 +801,7 @@ Partial Class ColumnsFrm
         'cv1aTextbox
         '
         Me.cv1aTextbox.FormattingEnabled = True
-        Me.cv1aTextbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6", "account", "accountName", "amount", "beginDate", "checkDate", "checksCheckNumber", "checksEmpId", "checksEmpNameFirst", "checksEmpNameLast", "checksEmpNameMiddle", "coID", "credit", "customField1", "customField2", "customField3", "customField4", "customField5", "debit", "detCode", "detType", "endDate", "endofMonthDate", "hours", "laborDistCC1Code", "laborDistCC2Code", "laborDistCC3Code", "laborDistEmpID", "process", "processDate", "rowSource", "rulesEmpNameFirst", "rulesEmpNameLast"})
+        Me.cv1aTextbox.Items.AddRange(New Object() {"gl1", "gl2", "gl3", "gl4", "gl5", "gl6", "account", "accountName", "amount", "agencyPayableTo", "agencyCheckNumber", "beginDate", "cd", "checkDate", "checksCheckNumber", "checksEmpId", "checksEmpNameFirst", "checksEmpNameLast", "checksEmpNameMiddle", "checksTransaction", "coID", "customField1", "customField2", "customField3", "customField4", "customField5", "cCostCenterMatrixID", "detCode", "detType", "empNameFirst", "empNameMiddle", "empNameLast", "empNameSource", "endDate", "endofMonthDate", "hours", "laborDistCC1Code", "laborDistCC2Code", "laborDistCC3Code", "laborDistCC1Name", "laborDistCC2Name", "laborDistCC3Name", "laborDistEmpID", "process", "processDate", "row", "rowSource", "rulesEmpID", "rulesEmpNameFirst", "rulesEmpNameLast", "rulesTransaction", "rulesVoucherNumber"})
         Me.cv1aTextbox.Location = New System.Drawing.Point(4, 29)
         Me.cv1aTextbox.Name = "cv1aTextbox"
         Me.cv1aTextbox.Size = New System.Drawing.Size(132, 21)
@@ -713,11 +831,24 @@ Partial Class ColumnsFrm
         Me.DelimiterButton.Text = "Delimiter"
         Me.DelimiterButton.UseVisualStyleBackColor = False
         '
+        'padButton
+        '
+        Me.padButton.AutoSize = True
+        Me.padButton.BackColor = System.Drawing.Color.LavenderBlush
+        Me.padButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.padButton.Location = New System.Drawing.Point(1102, 10)
+        Me.padButton.Name = "padButton"
+        Me.padButton.Size = New System.Drawing.Size(80, 23)
+        Me.padButton.TabIndex = 22
+        Me.padButton.Text = "Padding"
+        Me.padButton.UseVisualStyleBackColor = False
+        '
         'ColumnsFrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1280, 286)
+        Me.Controls.Add(Me.padButton)
         Me.Controls.Add(Me.DelimiterButton)
         Me.Controls.Add(Me.Label20)
         Me.Controls.Add(Me.Panel2)
@@ -794,4 +925,14 @@ Partial Class ColumnsFrm
     Friend WithEvents dtFormatButton4 As ComboBox
     Friend WithEvents dtFormatButton3 As ComboBox
     Friend WithEvents dtFormatButton2 As ComboBox
+    Friend WithEvents padButton As Button
+    Friend WithEvents amtFormatButton1 As ComboBox
+    Friend WithEvents amtFormatButton9 As ComboBox
+    Friend WithEvents amtFormatButton8 As ComboBox
+    Friend WithEvents amtFormatButton7 As ComboBox
+    Friend WithEvents amtFormatButton6 As ComboBox
+    Friend WithEvents amtFormatButton5 As ComboBox
+    Friend WithEvents amtFormatButton4 As ComboBox
+    Friend WithEvents amtFormatButton3 As ComboBox
+    Friend WithEvents amtFormatButton2 As ComboBox
 End Class

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<parms>
+  <sp reportType="detailed">
+    <accounts />
+    <fields>
+      <field name="account" include="Y" />
+      <field name="amount" include="Y" />
+      <field name="amount" include="Y" />
+    </fields>
+    <transfers />
+    <miscellaneous>
+      <misc />
+    </miscellaneous>
+  </sp>
+  <rdl>
+    <miscellaneous>
+      <misc />
+    </miscellaneous>
+    <dates />
+    <sorts>
+      <sort />
+    </sorts>
+  </rdl>
+  <rdlReportFormat>
+    <format />
+    <header />
+    <footer />
+    <fro />
+    <groupFooter />
+    <groupHeader />
+    <pdf />
+    <pdfHeader />
+    <pdfBody />
+    <format value="account" type="variable" position="1" />
+    <format text="." type="text" position="2" />
+    <format value="amount" type="variable" position="3" />
+    <format text="." type="text" position="4" />
+    <format value="amount" type="variable" position="5" />
+    <format text="&amp;#13;&amp;#10;" type="text" position="6" />
+  </rdlReportFormat>
+</parms>

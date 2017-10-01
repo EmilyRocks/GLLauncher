@@ -61,7 +61,6 @@ Public Class Launcher
         SaveFileDialog1.Filter = "Xml files (*.xml)|*.xml|All files (*.*)|*.*"
         SaveFileDialog1.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
         Dim result As DialogResult = SaveFileDialog1.ShowDialog()
-        Dim fileStream As Stream
         If (result = DialogResult.OK) Then
             Dim newfile As New XmlDocument
             newfile.Load(My.Computer.FileSystem.SpecialDirectories.MyDocuments & "\newFile.xml")
