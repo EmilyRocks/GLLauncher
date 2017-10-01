@@ -16,3 +16,4 @@ D:\My Visual Studio Projects\GL_Launcher\GL_Launcher\obj\Debug\GL_Launcher.Colum
 D:\My Visual Studio Projects\GL_Launcher\GL_Launcher\obj\Debug\GL_Launcher.Delimit.resources
 D:\My Visual Studio Projects\GL_Launcher\GL_Launcher\obj\Debug\GL_Launcher.transfersFrm.resources
 D:\My Visual Studio Projects\GL_Launcher\GL_Launcher\obj\Debug\GL_Launcher.miscFrm.resources
+D:\My Visual Studio Projects\GL_Launcher\GL_Launcher\obj\Debug\GL_Launcher.header.resources

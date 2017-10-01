@@ -1,6 +1,6 @@
 ﻿Option Explicit On
 Option Infer Off
-Option Strict On
+'Option Strict On
 ' Project name: GL Launcher
 ' Project purpose: Inserts values easily and efficiently into an XML file for use with GL's standard report template.
 ' Created by: Emily King Thomas
@@ -53,6 +53,25 @@ Public Class Launcher
     End Sub
 
     Private Sub LaunchGL_Click(sender As Object, e As EventArgs) Handles LaunchGL.Click
+        'outputs character trimming into xml file
+        Dim newFile As New XmlDocument
+        Dim path As String = My.Computer.FileSystem.SpecialDirectories.MyDocuments & "\newFile.xml"
+        newFile.Load(path)
+        Dim charTrim As XmlElement = newFile.CreateElement("misc")
+        Dim xmlTrim As String
+        Dim miscSP As XmlElement = newFile.SelectSingleNode(xpath:="parms/sp/miscellaneous")
+        'moves all characters in array to string
+        xmlTrim = String.Join(",", getTrimChars)
+        If removeTrim1 = "no" Then
+            charTrim.SetAttribute("trimChars", xmlTrim)
+            charTrim.SetAttribute("trimLength", "5")
+            charTrim.SetAttribute("trimBegin", "1")
+            charTrim.SetAttribute("name", "trim")
+            miscSP.AppendChild(charTrim)
+        End If
+        'needs or trim action won't save
+        newFile.Save(path)
+
         Dim SaveFileDialog1 As New SaveFileDialog
         SaveFileDialog1.CreatePrompt = True
         SaveFileDialog1.OverwritePrompt = True
@@ -62,9 +81,8 @@ Public Class Launcher
         SaveFileDialog1.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
         Dim result As DialogResult = SaveFileDialog1.ShowDialog()
         If (result = DialogResult.OK) Then
-            Dim newfile As New XmlDocument
-            newfile.Load(My.Computer.FileSystem.SpecialDirectories.MyDocuments & "\newFile.xml")
-            newfile.Save(SaveFileDialog1.FileName)
+            newFile.Load(My.Computer.FileSystem.SpecialDirectories.MyDocuments & "\newFile.xml")
+            newFile.Save(SaveFileDialog1.FileName)
         End If
     End Sub
 End Class

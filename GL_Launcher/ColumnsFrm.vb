@@ -22,6 +22,16 @@ Module Variables
         End Set
     End Property
 
+    Dim cdmisctrigger As String
+    Public Property Cdmisctrigger1 As String
+        Get
+            Return cdmisctrigger
+        End Get
+        Set(value As String)
+            cdmisctrigger = value
+        End Set
+    End Property
+
     Dim dateList() As String = {"beginDate", "checkDate", "endDate", "endofMonthDate", "processDate"}
 
 End Module
@@ -508,7 +518,17 @@ Public Class ColumnsFrm
 
         'this code declares the location of a specific node by specific attribute and deletes it
         Dim cdnode As XmlNode = fields.SelectSingleNode("//field[@name='cd']")
-        cdnode.RemoveAll()
+        If cdnode IsNot Nothing Then
+            cdnode.RemoveAll()
+            Cdmisctrigger1 = "yes"
+        End If
+
+
+        'turn on for sanity check during testing to see if cd works
+        'Dim testcd As String
+        'testcd = cdnode.ToString
+        'MessageBox.Show(text:=testcd)
+
 
         'sets misc absvalue line
         If amtcheck.Contains("absAmount") Then
