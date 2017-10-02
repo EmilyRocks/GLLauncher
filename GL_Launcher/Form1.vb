@@ -6,6 +6,7 @@ Public Class Cash
     Dim newFile As New XmlDocument()
     Dim path As String = My.Computer.FileSystem.SpecialDirectories.MyDocuments & "\newFile.xml"
     Private Sub Cash_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'reminds people to select report type first so xml tree gets generated
         If IO.File.Exists(path) Then
             newFile.Load(path)
         Else
@@ -68,7 +69,7 @@ Public Class Cash
 
         If mGL6Textbox.Text <> "" Then
             xmlAcct2.SetAttribute("gl6", mGL6textbox.Text)
-            manAcct.InsertAfter(xmlAcct2, xmlAcct)
+            manAcct.AppendChild(xmlAcct2)
         End If
         If mGL5Textbox.Text <> "" Then
             xmlAcct2.SetAttribute("gl5", mGL5Textbox.Text)
@@ -89,7 +90,7 @@ Public Class Cash
         If mGL1Textbox.Text <> "" Then
             xmlAcct2.SetAttribute("name", "manual")
             xmlAcct2.SetAttribute("gl1", mGL1Textbox.Text)
-            manAcct.InsertAfter(xmlAcct2, xmlAcct)
+            manAcct.AppendChild(xmlAcct)
             If manLetterButton.Checked = True Then
                 manSymbol.SetAttribute("name", "manual")
                 manSymbol.SetAttribute("include", "Y")
@@ -110,7 +111,7 @@ Public Class Cash
 
         If nGL6Textbox.Text <> "" Then
             xmlAcct3.SetAttribute("gl6", nGL6Textbox.Text)
-            netAcct.InsertAfter(xmlAcct3, xmlAcct2)
+            netAcct.AppendChild(xmlAcct3)
         End If
         If nGL5Textbox.Text <> "" Then
             xmlAcct3.SetAttribute("gl5", nGL5Textbox.Text)
@@ -131,7 +132,7 @@ Public Class Cash
         If nGL1Textbox.Text <> "" Then
             xmlAcct3.SetAttribute("name", "netChecks")
             xmlAcct3.SetAttribute("gl1", nGL1Textbox.Text)
-            netAcct.InsertAfter(xmlAcct3, xmlAcct2)
+            netAcct.AppendChild(xmlAcct3)
             If netLetterButton.Checked = True Then
                 netSymbol.SetAttribute("name", "netChecks")
                 netSymbol.SetAttribute("include", "Y")

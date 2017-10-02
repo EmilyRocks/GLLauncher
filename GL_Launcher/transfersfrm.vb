@@ -16,6 +16,14 @@ Public Class transfersFrm
         Dim modsc2 As XmlElement = newFile.CreateElement("transfer")
 
         If noAgencyButton.Checked = True Then
+            If agLetterButton.Checked = True Then
+                agency.SetAttribute("symbol", "A")
+                getTrimChars.Add("A")
+            End If
+            If agCharButton.Checked = True Then
+                agency.SetAttribute("symbol", "&amp;")
+                getTrimChars.Add("&amp;")
+            End If
             agency.SetAttribute("method", "0")
             agency.SetAttribute("name", "agency")
             transfers.AppendChild(agency)
@@ -78,6 +86,14 @@ Public Class transfersFrm
         End If
 
         If noTaxButton.Checked = True Then
+            If taxLetterButton.Checked = True Then
+                tax.SetAttribute("symbol", "T")
+                getTrimChars.Add("T")
+            End If
+            If taxCharButton.Checked = True Then
+                tax.SetAttribute("symbol", "$")
+                getTrimChars.Add("$")
+            End If
             tax.SetAttribute("method", "0")
             tax.SetAttribute("name", "tax")
             transfers.AppendChild(tax)

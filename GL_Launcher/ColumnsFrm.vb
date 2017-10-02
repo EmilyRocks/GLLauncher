@@ -22,6 +22,16 @@ Module Variables
         End Set
     End Property
 
+    Dim cdmisctrigger As String
+    Public Property Cdmisctrigger1 As String
+        Get
+            Return cdmisctrigger
+        End Get
+        Set(value As String)
+            cdmisctrigger = value
+        End Set
+    End Property
+
     Dim dateList() As String = {"beginDate", "checkDate", "endDate", "endofMonthDate", "processDate"}
 
 End Module
@@ -108,7 +118,7 @@ Public Class ColumnsFrm
         Dim c17Format As XmlElement = newFile.CreateElement("format")
 
         Dim rdl As XmlElement = newFile.SelectSingleNode(xpath:="//rdlReportFormat")
-
+        Dim rdlMisc As XmlElement = newFile.SelectSingleNode(xpath:="parms/rdl/miscellaneous")
         Dim fields As XmlElement = newFile.SelectSingleNode(xpath:="//fields")
 
         Dim field1 As XmlElement = newFile.CreateElement("field")
@@ -120,6 +130,18 @@ Public Class ColumnsFrm
         Dim field7 As XmlElement = newFile.CreateElement("field")
         Dim field8 As XmlElement = newFile.CreateElement("field")
         Dim field9 As XmlElement = newFile.CreateElement("field")
+        Dim misc1 As XmlElement = newFile.CreateElement("misc")
+        Dim misc2 As XmlElement = newFile.CreateElement("misc")
+        Dim fieldcheck As New List(Of String)
+        Dim amtcheck As New List(Of String)
+        Dim amtOptions As New List(Of String)
+        amtOptions.Add("absAmount")
+        amtOptions.Add("debit")
+        amtOptions.Add("credit")
+
+
+
+
 
 
         'column separater value
@@ -129,16 +151,25 @@ Public Class ColumnsFrm
         If delimiter = "Tab" Then xslDelimiter = "&#9;"
 
         'sets the first column in the rdl report format section of xml file
+        'if text selected
         If ct1Textbox.Text = "text" Then
             c1Format.SetAttribute(ct1Textbox.Text, cv1aTextbox.Text)
             c1Format.SetAttribute("type", ct1Textbox.Text)
         End If
+        'if a value is needed
         If ct1Textbox.Text = "dynamic" Then
-            c1Format.SetAttribute("value", cv1aTextbox.Text)
+            'if amount has formatting but is required in rdl otherwise just whatever value is selected
+            If amtOptions.Contains(amtFormatButton1.Text) Then
+                c1Format.SetAttribute("value", amtFormatButton1.Text)
+            Else
+                c1Format.SetAttribute("value", cv1aTextbox.Text)
+            End If
             c1Format.SetAttribute("type", "variable")
             field1.SetAttribute("name", cv1aTextbox.Text)
             field1.SetAttribute("include", "Y")
+            amtcheck.Add(amtFormatButton1.Text)
         End If
+        'if a text item and a value are needed
         If ct1Textbox.Text = "combo" Then
             c1Format.SetAttribute("text", cv1aTextbox.Text)
             c1Format.SetAttribute("value", cv1bTextbox.Text)
@@ -146,9 +177,15 @@ Public Class ColumnsFrm
             field1.SetAttribute("name", cv1bTextbox.Text)
             field1.SetAttribute("include", "Y")
         End If
+        'sets the column
         c1Format.SetAttribute("position", "1")
+        'adds to rdl format
         rdl.AppendChild(c1Format)
+        'adds to fields
         fields.AppendChild(field1)
+        'adds to array to prevent duplicates works on dynamic values only atm
+        fieldcheck.Add(field1.GetAttribute("name"))
+
 
 
         'sets the second column in the rdl report format section of xml file
@@ -163,10 +200,15 @@ Public Class ColumnsFrm
             c3Format.SetAttribute("type", ct2Textbox.Text)
         End If
         If ct2Textbox.Text = "dynamic" Then
-            c3Format.SetAttribute("value", cv2aTextbox.Text)
+            If amtOptions.Contains(amtFormatButton2.Text) Then
+                c3Format.SetAttribute("value", amtFormatButton2.Text)
+            Else
+                c3Format.SetAttribute("value", cv2aTextbox.Text)
+            End If
             c3Format.SetAttribute("type", "variable")
             field2.SetAttribute("name", cv2aTextbox.Text)
             field2.SetAttribute("include", "Y")
+            amtcheck.Add(amtFormatButton2.Text)
         End If
         If ct2Textbox.Text = "combo" Then
             c3Format.SetAttribute("value", cv2bTextbox.Text)
@@ -177,7 +219,11 @@ Public Class ColumnsFrm
         End If
         c3Format.SetAttribute("position", "3")
         rdl.AppendChild(c3Format)
-        fields.AppendChild(field2)
+        'code differs here to start checking array to look to see if the variable is already included in the sp fields list, if not then it adds it
+        If Not fieldcheck.Contains(cv2aTextbox.Text) Then
+            fields.AppendChild(field2)
+            fieldcheck.Add(field2.GetAttribute("name"))
+        End If
 
         'sets the fourth column in the rdl report format section of xml file
         If ct3Textbox.Text <> "" Then
@@ -194,10 +240,15 @@ Public Class ColumnsFrm
                 c5Format.SetAttribute("type", ct3Textbox.Text)
             End If
             If ct3Textbox.Text = "dynamic" Then
-                c5Format.SetAttribute("value", cv3aTextbox.Text)
+                If amtOptions.Contains(amtFormatButton3.Text) Then
+                    c5Format.SetAttribute("value", amtFormatButton3.Text)
+                Else
+                    c5Format.SetAttribute("value", cv3aTextbox.Text)
+                End If
                 c5Format.SetAttribute("type", "variable")
                 field3.SetAttribute("name", cv3aTextbox.Text)
                 field3.SetAttribute("include", "Y")
+                amtcheck.Add(amtFormatButton3.Text)
             End If
             If ct3Textbox.Text = "combo" Then
                 c5Format.SetAttribute("value", cv3bTextbox.Text)
@@ -208,7 +259,10 @@ Public Class ColumnsFrm
             End If
             c5Format.SetAttribute("position", "5")
             rdl.AppendChild(c5Format)
-            fields.AppendChild(field3)
+            If Not fieldcheck.Contains(cv3aTextbox.Text) Then
+                fields.AppendChild(field3)
+                fieldcheck.Add(field3.GetAttribute("name"))
+            End If
         End If
 
         'sets the sixth column in the rdl report format section of xml file
@@ -226,10 +280,15 @@ Public Class ColumnsFrm
                 c7Format.SetAttribute("type", ct4Textbox.Text)
             End If
             If ct4Textbox.Text = "dynamic" Then
-                c7Format.SetAttribute("value", cv4aTextbox.Text)
+                If amtOptions.Contains(amtFormatButton4.Text) Then
+                    c7Format.SetAttribute("value", amtFormatButton4.Text)
+                Else
+                    c7Format.SetAttribute("value", cv4aTextbox.Text)
+                End If
                 c7Format.SetAttribute("type", "variable")
                 field4.SetAttribute("name", cv4aTextbox.Text)
                 field4.SetAttribute("include", "Y")
+                amtcheck.Add(amtFormatButton4.Text)
             End If
             If ct4Textbox.Text = "combo" Then
                 c7Format.SetAttribute("value", cv4bTextbox.Text)
@@ -240,7 +299,10 @@ Public Class ColumnsFrm
             End If
             c7Format.SetAttribute("position", "7")
             rdl.AppendChild(c7Format)
-            fields.AppendChild(field4)
+            If Not fieldcheck.Contains(cv4aTextbox.Text) Then
+                fields.AppendChild(field4)
+                fieldcheck.Add(field4.GetAttribute("name"))
+            End If
         End If
 
         'sets the eighth column in the rdl report format section of xml file
@@ -258,10 +320,15 @@ Public Class ColumnsFrm
                 c9Format.SetAttribute("type", ct5Textbox.Text)
             End If
             If ct5Textbox.Text = "dynamic" Then
-                c9Format.SetAttribute("value", cv5aTextbox.Text)
+                If amtOptions.Contains(amtFormatButton5.Text) Then
+                    c9Format.SetAttribute("value", amtFormatButton5.Text)
+                Else
+                    c9Format.SetAttribute("value", cv5aTextbox.Text)
+                End If
                 c9Format.SetAttribute("type", "variable")
                 field5.SetAttribute("name", cv5aTextbox.Text)
                 field5.SetAttribute("include", "Y")
+                amtcheck.Add(amtFormatButton5.Text)
             End If
             If ct5Textbox.Text = "combo" Then
                 c9Format.SetAttribute("value", cv5bTextbox.Text)
@@ -272,7 +339,10 @@ Public Class ColumnsFrm
             End If
             c9Format.SetAttribute("position", "9")
             rdl.AppendChild(c9Format)
-            fields.AppendChild(field5)
+            If Not fieldcheck.Contains(cv5aTextbox.Text) Then
+                fields.AppendChild(field5)
+                fieldcheck.Add(field5.GetAttribute("name"))
+            End If
         End If
 
         'sets the tenth column in the rdl report format section of xml file
@@ -290,10 +360,15 @@ Public Class ColumnsFrm
                 c11Format.SetAttribute("type", ct6Textbox.Text)
             End If
             If ct6Textbox.Text = "dynamic" Then
-                c11Format.SetAttribute("value", cv6aTextbox.Text)
+                If amtOptions.Contains(amtFormatButton6.Text) Then
+                    c11Format.SetAttribute("value", amtFormatButton6.Text)
+                Else
+                    c11Format.SetAttribute("value", cv6aTextbox.Text)
+                End If
                 c11Format.SetAttribute("type", "variable")
                 field6.SetAttribute("name", cv6aTextbox.Text)
                 field6.SetAttribute("include", "Y")
+                amtcheck.Add(amtFormatButton6.Text)
             End If
             If ct6Textbox.Text = "combo" Then
                 c11Format.SetAttribute("value", cv6bTextbox.Text)
@@ -304,9 +379,11 @@ Public Class ColumnsFrm
             End If
             c11Format.SetAttribute("position", "11")
             rdl.AppendChild(c11Format)
-            fields.AppendChild(field6)
+            If Not fieldcheck.Contains(cv6aTextbox.Text) Then
+                fields.AppendChild(field6)
+                fieldcheck.Add(field6.GetAttribute("name"))
+            End If
         End If
-
         'sets the twelfth column in the rdl report format section of xml file
         If ct7Textbox.Text <> "" Then
             c12Format.SetAttribute("text", xslDelimiter)
@@ -322,10 +399,15 @@ Public Class ColumnsFrm
                 c13Format.SetAttribute("type", ct7Textbox.Text)
             End If
             If ct7Textbox.Text = "dynamic" Then
-                c13Format.SetAttribute("value", cv7aTextbox.Text)
+                If amtOptions.Contains(amtFormatButton7.Text) Then
+                    c13Format.SetAttribute("value", amtFormatButton7.Text)
+                Else
+                    c13Format.SetAttribute("value", cv7aTextbox.Text)
+                End If
                 c13Format.SetAttribute("type", "variable")
                 field7.SetAttribute("name", cv7aTextbox.Text)
                 field7.SetAttribute("include", "Y")
+                amtcheck.Add(amtFormatButton7.Text)
             End If
             If ct7Textbox.Text = "combo" Then
                 c13Format.SetAttribute("value", cv7bTextbox.Text)
@@ -336,9 +418,11 @@ Public Class ColumnsFrm
             End If
             c13Format.SetAttribute("position", "13")
             rdl.AppendChild(c13Format)
-            fields.AppendChild(field7)
+            If Not fieldcheck.Contains(cv7aTextbox.Text) Then
+                fields.AppendChild(field7)
+                fieldcheck.Add(field7.GetAttribute("name"))
+            End If
         End If
-
 
         'sets the fourteenth column in the rdl report format section of xml file
         If ct8Textbox.Text <> "" Then
@@ -356,10 +440,15 @@ Public Class ColumnsFrm
                 c15Format.SetAttribute("type", ct8Textbox.Text)
             End If
             If ct8Textbox.Text = "dynamic" Then
-                c15Format.SetAttribute("value", cv8aTextbox.Text)
+                If amtOptions.Contains(amtFormatButton8.Text) Then
+                    c15Format.SetAttribute("value", amtFormatButton8.Text)
+                Else
+                    c15Format.SetAttribute("value", cv8aTextbox.Text)
+                End If
                 c15Format.SetAttribute("type", "variable")
                 field8.SetAttribute("name", cv8aTextbox.Text)
                 field8.SetAttribute("include", "Y")
+                amtcheck.Add(amtFormatButton8.Text)
             End If
             If ct8Textbox.Text = "combo" Then
                 c15Format.SetAttribute("value", cv8bTextbox.Text)
@@ -370,9 +459,11 @@ Public Class ColumnsFrm
             End If
             c15Format.SetAttribute("position", "15")
             rdl.AppendChild(c15Format)
-            fields.AppendChild(field8)
+            If Not fieldcheck.Contains(cv8aTextbox.Text) Then
+                fields.AppendChild(field8)
+                fieldcheck.Add(field8.GetAttribute("name"))
+            End If
         End If
-
 
         'sets the sixteenth column in the rdl report format section of xml file
         If ct9Textbox.Text <> "" Then
@@ -389,10 +480,15 @@ Public Class ColumnsFrm
                 c17Format.SetAttribute("type", ct9Textbox.Text)
             End If
             If ct9Textbox.Text = "dynamic" Then
-                c17Format.SetAttribute("value", cv9aTextbox.Text)
+                If amtOptions.Contains(amtFormatButton9.Text) Then
+                    c17Format.SetAttribute("value", amtFormatButton9.Text)
+                Else
+                    c17Format.SetAttribute("value", cv9aTextbox.Text)
+                End If
                 c17Format.SetAttribute("type", "variable")
                 field9.SetAttribute("name", cv9aTextbox.Text)
                 field9.SetAttribute("include", "Y")
+                amtcheck.Add(amtFormatButton9.Text)
             End If
             If ct9Textbox.Text = "combo" Then
                 c17Format.SetAttribute("value", cv9bTextbox.Text)
@@ -403,7 +499,10 @@ Public Class ColumnsFrm
             End If
             c17Format.SetAttribute("position", "17")
             rdl.AppendChild(c17Format)
-            fields.AppendChild(field9)
+            If Not fieldcheck.Contains(cv9aTextbox.Text) Then
+                fields.AppendChild(field9)
+                fieldcheck.Add(field9.GetAttribute("name"))
+            End If
         End If
 
         'After all columns, add another position for the carriage return, line feed
@@ -416,6 +515,35 @@ Public Class ColumnsFrm
             lastFormat.SetAttribute("position", i)
             rdl.AppendChild(lastFormat)
         End If
+
+        'this code declares the location of a specific node by specific attribute and deletes it
+        Dim cdnode As XmlNode = fields.SelectSingleNode("//field[@name='cd']")
+        If cdnode IsNot Nothing Then
+            cdnode.RemoveAll()
+            Cdmisctrigger1 = "yes"
+        End If
+
+
+        'turn on for sanity check during testing to see if cd works
+        'Dim testcd As String
+        'testcd = cdnode.ToString
+        'MessageBox.Show(text:=testcd)
+
+
+        'sets misc absvalue line
+        If amtcheck.Contains("absAmount") Then
+            misc1.SetAttribute("include", "Y")
+            misc1.SetAttribute("name", "absAmount")
+            rdlMisc.AppendChild(misc1)
+        End If
+
+        'setes misc nodecimal line
+        If amtcheck.Contains("noDecimal") Then
+            misc2.SetAttribute("include", "Y")
+            misc2.SetAttribute("name", "noDecimal")
+            rdlMisc.AppendChild(misc2)
+        End If
+
         'adding date formats 
         Dim dateFormat1 As XmlElement = newFile.CreateElement("date")
         Dim dateFormat2 As XmlElement = newFile.CreateElement("date")
@@ -427,52 +555,138 @@ Public Class ColumnsFrm
         Dim dateFormat8 As XmlElement = newFile.CreateElement("date")
         Dim dateFormat9 As XmlElement = newFile.CreateElement("date")
         Dim dates As XmlElement = newFile.SelectSingleNode(xpath:="//dates")
+        Dim cnt As Integer = 0
+        Dim dateCheck As New List(Of String)
 
         If dtFormatButton1.Visible = True Then
             dateFormat1.SetAttribute("format", dtFormatButton1.Text)
             dateFormat1.SetAttribute("name", cv1aTextbox.Text)
             dates.AppendChild(dateFormat1)
+            dateCheck.Add(cv1aTextbox.Text)
         End If
+
         If dtFormatButton2.Visible = True Then
-            dateFormat2.SetAttribute("format", dtFormatButton2.Text)
-            dateFormat2.SetAttribute("name", cv2aTextbox.Text)
-            dates.AppendChild(dateFormat2)
+            If dateCheck.Contains(cv2aTextbox.Text) Then
+                cnt = cnt + 1
+                dateFormat2.SetAttribute("date", cv2aTextbox.Text)
+                dateFormat2.SetAttribute("format", dtFormatButton2.Text)
+                dateFormat2.SetAttribute("name", "date" & cnt.ToString)
+                dates.AppendChild(dateFormat2)
+            Else
+                dateFormat2.SetAttribute("format", dtFormatButton2.Text)
+                dateFormat2.SetAttribute("name", cv2aTextbox.Text)
+                dates.AppendChild(dateFormat2)
+                dateCheck.Add(cv2aTextbox.Text)
+            End If
         End If
+
         If dtFormatButton3.Visible = True Then
-            dateFormat3.SetAttribute("format", dtFormatButton3.Text)
-            dateFormat3.SetAttribute("name", cv3aTextbox.Text)
-            dates.AppendChild(dateFormat3)
+            If dateCheck.Contains(cv3aTextbox.Text) Then
+                cnt = cnt + 1
+                dateFormat3.SetAttribute("date", cv3aTextbox.Text)
+                dateFormat3.SetAttribute("format", dtFormatButton3.Text)
+                dateFormat3.SetAttribute("name", "date" & cnt.ToString)
+                dates.AppendChild(dateFormat3)
+            Else
+                dateFormat3.SetAttribute("format", dtFormatButton3.Text)
+                dateFormat3.SetAttribute("name", cv3aTextbox.Text)
+                dates.AppendChild(dateFormat3)
+                dateCheck.Add(cv3aTextbox.Text)
+            End If
         End If
+
         If dtFormatButton4.Visible = True Then
-            dateFormat4.SetAttribute("format", dtFormatButton4.Text)
-            dateFormat4.SetAttribute("name", cv4aTextbox.Text)
-            dates.AppendChild(dateFormat4)
+            If dateCheck.Contains(cv4aTextbox.Text) Then
+                cnt = cnt + 1
+                dateFormat4.SetAttribute("date", cv4aTextbox.Text)
+                dateFormat4.SetAttribute("format", dtFormatButton4.Text)
+                dateFormat4.SetAttribute("name", "date" & cnt.ToString)
+                dates.AppendChild(dateFormat4)
+            Else
+                dateFormat4.SetAttribute("format", dtFormatButton4.Text)
+                dateFormat4.SetAttribute("name", cv4aTextbox.Text)
+                dates.AppendChild(dateFormat4)
+                dateCheck.Add(cv4aTextbox.Text)
+            End If
         End If
+
         If dtFormatButton5.Visible = True Then
-            dateFormat5.SetAttribute("format", dtFormatButton5.Text)
-            dateFormat5.SetAttribute("name", cv5aTextbox.Text)
-            dates.AppendChild(dateFormat5)
+            If dateCheck.Contains(cv5aTextbox.Text) Then
+                cnt = cnt + 1
+                dateFormat5.SetAttribute("date", cv5aTextbox.Text)
+                dateFormat5.SetAttribute("format", dtFormatButton5.Text)
+                dateFormat5.SetAttribute("name", "date" & cnt.ToString)
+                dates.AppendChild(dateFormat5)
+            Else
+                dateFormat5.SetAttribute("format", dtFormatButton5.Text)
+                dateFormat5.SetAttribute("name", cv5aTextbox.Text)
+                dates.AppendChild(dateFormat5)
+                dateCheck.Add(cv5aTextbox.Text)
+            End If
         End If
+
         If dtFormatButton6.Visible = True Then
-            dateFormat6.SetAttribute("format", dtFormatButton6.Text)
-            dateFormat6.SetAttribute("name", cv6aTextbox.Text)
-            dates.AppendChild(dateFormat6)
+            If dateCheck.Contains(cv6aTextbox.Text) Then
+                cnt = cnt + 1
+                dateFormat6.SetAttribute("date", cv6aTextbox.Text)
+                dateFormat6.SetAttribute("format", dtFormatButton6.Text)
+                dateFormat6.SetAttribute("name", "date" & cnt.ToString)
+                dates.AppendChild(dateFormat6)
+            Else
+                dateFormat6.SetAttribute("format", dtFormatButton6.Text)
+                dateFormat6.SetAttribute("name", cv6aTextbox.Text)
+                dates.AppendChild(dateFormat6)
+                dateCheck.Add(cv6aTextbox.Text)
+            End If
         End If
+
         If dtFormatButton7.Visible = True Then
-            dateFormat7.SetAttribute("format", dtFormatButton7.Text)
-            dateFormat7.SetAttribute("name", cv7aTextbox.Text)
-            dates.AppendChild(dateFormat7)
+            If dateCheck.Contains(cv7aTextbox.Text) Then
+                cnt = cnt + 1
+                dateFormat7.SetAttribute("date", cv7aTextbox.Text)
+                dateFormat7.SetAttribute("format", dtFormatButton7.Text)
+                dateFormat7.SetAttribute("name", "date" & cnt.ToString)
+                dates.AppendChild(dateFormat7)
+            Else
+                dateFormat7.SetAttribute("format", dtFormatButton7.Text)
+                dateFormat7.SetAttribute("name", cv7aTextbox.Text)
+                dates.AppendChild(dateFormat7)
+                dateCheck.Add(cv7aTextbox.Text)
+            End If
         End If
+
         If dtFormatButton8.Visible = True Then
-            dateFormat8.SetAttribute("format", dtFormatButton8.Text)
-            dateFormat8.SetAttribute("name", cv8aTextbox.Text)
-            dates.AppendChild(dateFormat8)
+            If dateCheck.Contains(cv8aTextbox.Text) Then
+                cnt = cnt + 1
+                dateFormat8.SetAttribute("date", cv8aTextbox.Text)
+                dateFormat8.SetAttribute("format", dtFormatButton8.Text)
+                dateFormat8.SetAttribute("name", "date" & cnt.ToString)
+                dates.AppendChild(dateFormat8)
+            Else
+                dateFormat8.SetAttribute("format", dtFormatButton8.Text)
+                dateFormat8.SetAttribute("name", cv8aTextbox.Text)
+                dates.AppendChild(dateFormat8)
+                dateCheck.Add(cv8aTextbox.Text)
+            End If
         End If
+
         If dtFormatButton9.Visible = True Then
-            dateFormat9.SetAttribute("format", dtFormatButton9.Text)
-            dateFormat9.SetAttribute("name", cv9aTextbox.Text)
-            dates.AppendChild(dateFormat9)
+            If dateCheck.Contains(cv9aTextbox.Text) Then
+                cnt = cnt + 1
+                dateFormat9.SetAttribute("date", cv9aTextbox.Text)
+                dateFormat9.SetAttribute("format", dtFormatButton9.Text)
+                dateFormat9.SetAttribute("name", "date" & cnt.ToString)
+                dates.AppendChild(dateFormat9)
+            Else
+                dateFormat9.SetAttribute("format", dtFormatButton9.Text)
+                dateFormat9.SetAttribute("name", cv9aTextbox.Text)
+                dates.AppendChild(dateFormat9)
+                dateCheck.Add(cv9aTextbox.Text)
+            End If
         End If
+
+
+
         ' Attempted to loop through but could not get the if section to apply attributes to the right elements. Play with later.
         'Dim ctindex As Integer = 0
         'For Each ct As ComboBox In Panel1.Controls.OfType(Of ComboBox)()
@@ -495,6 +709,7 @@ Public Class ColumnsFrm
         newFile.Save(path)
     End Sub
 
+    'these subs turn on the second box for the combo text value options
     Private Sub ct2Textbox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ct2Textbox.SelectedIndexChanged
         If ct2Textbox.Text = "combo" Then
             cv2bTextbox.Visible = True
@@ -596,95 +811,149 @@ Public Class ColumnsFrm
 
     End Sub
 
-    'shows date format boxes
+    'shows date or amount format boxes
     Private Sub cv1aTextbox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cv1aTextbox.SelectedIndexChanged
         If DateList1.Contains(cv1aTextbox.Text) Then
             dtFormatButton1.Visible = True
+        End If
+        If cv1aTextbox.Text = "amount" Then
+            amtFormatButton1.Visible = True
         End If
     End Sub
     Private Sub cv2aTextbox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cv2aTextbox.SelectedIndexChanged
         If DateList1.Contains(cv2aTextbox.Text) Then
             dtFormatButton2.Visible = True
         End If
+        If cv2aTextbox.Text = "amount" Then
+            amtFormatButton2.Visible = True
+        End If
     End Sub
     Private Sub cv3aTextbox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cv3aTextbox.SelectedIndexChanged
         If DateList1.Contains(cv3aTextbox.Text) Then
             dtFormatButton3.Visible = True
+        End If
+        If cv3aTextbox.Text = "amount" Then
+            amtFormatButton3.Visible = True
         End If
     End Sub
     Private Sub cv4aTextbox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cv4aTextbox.SelectedIndexChanged
         If DateList1.Contains(cv4aTextbox.Text) Then
             dtFormatButton4.Visible = True
         End If
+        If cv4aTextbox.Text = "amount" Then
+            amtFormatButton4.Visible = True
+        End If
     End Sub
     Private Sub cv5aTextbox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cv5aTextbox.SelectedIndexChanged
         If DateList1.Contains(cv5aTextbox.Text) Then
             dtFormatButton5.Visible = True
+        End If
+        If cv5aTextbox.Text = "amount" Then
+            amtFormatButton5.Visible = True
         End If
     End Sub
     Private Sub cv6aTextbox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cv6aTextbox.SelectedIndexChanged
         If DateList1.Contains(cv6aTextbox.Text) Then
             dtFormatButton6.Visible = True
         End If
+        If cv6aTextbox.Text = "amount" Then
+            amtFormatButton6.Visible = True
+        End If
     End Sub
     Private Sub cv7aTextbox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cv7aTextbox.SelectedIndexChanged
         If DateList1.Contains(cv7aTextbox.Text) Then
             dtFormatButton7.Visible = True
+        End If
+        If cv7aTextbox.Text = "amount" Then
+            amtFormatButton7.Visible = True
         End If
     End Sub
     Private Sub cv8aTextbox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cv8aTextbox.SelectedIndexChanged
         If DateList1.Contains(cv8aTextbox.Text) Then
             dtFormatButton8.Visible = True
         End If
+        If cv8aTextbox.Text = "amount" Then
+            amtFormatButton8.Visible = True
+        End If
     End Sub
     Private Sub cv9aTextbox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cv9aTextbox.SelectedIndexChanged
         If DateList1.Contains(cv9aTextbox.Text) Then
             dtFormatButton9.Visible = True
+        End If
+        If cv9aTextbox.Text = "amount" Then
+            amtFormatButton9.Visible = True
         End If
     End Sub
     Private Sub cv1bTextbox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cv1bTextbox.SelectedIndexChanged
         If DateList1.Contains(cv1bTextbox.Text) Then
             dtFormatButton1.Visible = True
         End If
+        If cv1bTextbox.Text = "amount" Then
+            amtFormatButton1.Visible = True
+        End If
     End Sub
     Private Sub cv2bTextbox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cv2bTextbox.SelectedIndexChanged
         If DateList1.Contains(cv2bTextbox.Text) Then
             dtFormatButton2.Visible = True
+        End If
+        If cv2bTextbox.Text = "amount" Then
+            amtFormatButton2.Visible = True
         End If
     End Sub
     Private Sub cv3bTextbox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cv3bTextbox.SelectedIndexChanged
         If DateList1.Contains(cv3bTextbox.Text) Then
             dtFormatButton3.Visible = True
         End If
+        If cv3bTextbox.Text = "amount" Then
+            amtFormatButton3.Visible = True
+        End If
     End Sub
     Private Sub cv4bTextbox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cv4bTextbox.SelectedIndexChanged
         If DateList1.Contains(cv4bTextbox.Text) Then
             dtFormatButton4.Visible = True
+        End If
+        If cv4bTextbox.Text = "amount" Then
+            amtFormatButton4.Visible = True
         End If
     End Sub
     Private Sub cv5bTextbox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cv5bTextbox.SelectedIndexChanged
         If DateList1.Contains(cv5bTextbox.Text) Then
             dtFormatButton5.Visible = True
         End If
+        If cv5bTextbox.Text = "amount" Then
+            amtFormatButton5.Visible = True
+        End If
     End Sub
     Private Sub cv6bTextbox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cv6bTextbox.SelectedIndexChanged
         If DateList1.Contains(cv6bTextbox.Text) Then
             dtFormatButton6.Visible = True
+        End If
+        If cv6bTextbox.Text = "amount" Then
+            amtFormatButton6.Visible = True
         End If
     End Sub
     Private Sub cv7bTextbox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cv7bTextbox.SelectedIndexChanged
         If DateList1.Contains(cv7bTextbox.Text) Then
             dtFormatButton7.Visible = True
         End If
+        If cv7bTextbox.Text = "amount" Then
+            amtFormatButton7.Visible = True
+        End If
     End Sub
     Private Sub cv8bTextbox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cv8bTextbox.SelectedIndexChanged
         If DateList1.Contains(cv8bTextbox.Text) Then
             dtFormatButton8.Visible = True
         End If
+        If cv8bTextbox.Text = "amount" Then
+            amtFormatButton8.Visible = True
+        End If
     End Sub
     Private Sub cv9bTextbox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cv9bTextbox.SelectedIndexChanged
         If DateList1.Contains(cv9bTextbox.Text) Then
             dtFormatButton9.Visible = True
+        End If
+        If cv9bTextbox.Text = "amount" Then
+            amtFormatButton9.Visible = True
         End If
     End Sub
 End Class
