@@ -508,6 +508,7 @@ Public Class ColumnsFrm
         'After all columns, add another position for the carriage return, line feed
         If fields.HasChildNodes Then
             Dim i As Integer = rdl.GetElementsByTagName("format").Count
+            i = i + 1
             Dim lastFormat As XmlElement = newFile.CreateElement("format")
             i.ToString()
             lastFormat.SetAttribute("text", "&#13;&#10;")
