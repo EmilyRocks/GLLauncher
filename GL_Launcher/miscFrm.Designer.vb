@@ -30,9 +30,9 @@ Partial Class miscFrm
         Me.drValTextbox = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -107,15 +107,17 @@ Partial Class miscFrm
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(255, 37)
         Me.Panel2.TabIndex = 7
+        Me.Panel2.Visible = False
         '
-        'Label3
+        'RadioButton2
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(20, 12)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(100, 13)
-        Me.Label3.TabIndex = 0
-        Me.Label3.Text = "DR/CR Empty Field"
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.Location = New System.Drawing.Point(184, 10)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(51, 17)
+        Me.RadioButton2.TabIndex = 2
+        Me.RadioButton2.Text = "None"
+        Me.RadioButton2.UseVisualStyleBackColor = True
         '
         'RadioButton1
         '
@@ -129,15 +131,14 @@ Partial Class miscFrm
         Me.RadioButton1.Text = "0"
         Me.RadioButton1.UseVisualStyleBackColor = True
         '
-        'RadioButton2
+        'Label3
         '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(184, 10)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(51, 17)
-        Me.RadioButton2.TabIndex = 2
-        Me.RadioButton2.Text = "None"
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(20, 12)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(100, 13)
+        Me.Label3.TabIndex = 0
+        Me.Label3.Text = "DR/CR Empty Field"
         '
         'miscFrm
         '

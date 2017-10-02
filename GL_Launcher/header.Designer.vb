@@ -350,9 +350,9 @@ Partial Class Header
         Me.Label1.ForeColor = System.Drawing.Color.Black
         Me.Label1.Location = New System.Drawing.Point(15, 16)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(115, 18)
+        Me.Label1.Size = New System.Drawing.Size(140, 18)
         Me.Label1.TabIndex = 19
-        Me.Label1.Text = "Header Row 1"
+        Me.Label1.Text = "First Header Row"
         '
         'collectionTextbox
         '

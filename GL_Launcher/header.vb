@@ -215,6 +215,12 @@ Public Class Header
             getheaderFields.Add(hd9Textbox.Text)
         End If
 
+        'After all header text, adds carriage return, line feed
+        If getheaderFields IsNot Nothing AndAlso getheaderFields.Count <> 0 Then
+            getheaderFields.Add("&#13;&#10;")
+        End If
+
+        'adds header information to xml document
         Dim newFile As New XmlDocument
         Dim path As String = My.Computer.FileSystem.SpecialDirectories.MyDocuments & "\newFile.xml"
         newFile.Load(path)

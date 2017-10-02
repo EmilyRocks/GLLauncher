@@ -132,6 +132,7 @@ Partial Class Cash
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(190, 46)
         Me.Panel4.TabIndex = 14
+        Me.Panel4.Visible = False
         '
         'cashCharButton
         '

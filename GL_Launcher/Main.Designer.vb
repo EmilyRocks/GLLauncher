@@ -84,7 +84,7 @@ Partial Class Launcher
         'StartFooter
         '
         Me.StartFooter.AutoSize = True
-        Me.StartFooter.BackColor = System.Drawing.Color.LavenderBlush
+        Me.StartFooter.BackColor = System.Drawing.Color.DarkGray
         Me.StartFooter.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.StartFooter.Location = New System.Drawing.Point(109, 214)
         Me.StartFooter.Name = "StartFooter"
@@ -96,7 +96,7 @@ Partial Class Launcher
         'StartPDF
         '
         Me.StartPDF.AutoSize = True
-        Me.StartPDF.BackColor = System.Drawing.Color.LavenderBlush
+        Me.StartPDF.BackColor = System.Drawing.Color.DarkGray
         Me.StartPDF.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.StartPDF.Location = New System.Drawing.Point(109, 252)
         Me.StartPDF.Name = "StartPDF"

@@ -834,7 +834,7 @@ Partial Class ColumnsFrm
         'padButton
         '
         Me.padButton.AutoSize = True
-        Me.padButton.BackColor = System.Drawing.Color.LavenderBlush
+        Me.padButton.BackColor = System.Drawing.Color.DarkGray
         Me.padButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.padButton.Location = New System.Drawing.Point(1102, 10)
         Me.padButton.Name = "padButton"
