@@ -217,7 +217,7 @@ Public Class Header
 
         'After all header text, adds carriage return, line feed
         If getheaderFields IsNot Nothing AndAlso getheaderFields.Count <> 0 Then
-            getheaderFields.Add("&#13;&#10;")
+            getheaderFields.Add("&amp;#13;&amp;#10;")
         End If
 
         'adds header information to xml document

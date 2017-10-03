@@ -30,8 +30,8 @@ Partial Class miscFrm
         Me.drValTextbox = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.drcrNoneButton = New System.Windows.Forms.RadioButton()
+        Me.drcr0button = New System.Windows.Forms.RadioButton()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -100,36 +100,35 @@ Partial Class miscFrm
         '
         'Panel2
         '
-        Me.Panel2.Controls.Add(Me.RadioButton2)
-        Me.Panel2.Controls.Add(Me.RadioButton1)
+        Me.Panel2.Controls.Add(Me.drcrNoneButton)
+        Me.Panel2.Controls.Add(Me.drcr0button)
         Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Location = New System.Drawing.Point(319, 79)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(255, 37)
         Me.Panel2.TabIndex = 7
-        Me.Panel2.Visible = False
         '
-        'RadioButton2
+        'drcrNoneButton
         '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(184, 10)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(51, 17)
-        Me.RadioButton2.TabIndex = 2
-        Me.RadioButton2.Text = "None"
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.drcrNoneButton.AutoSize = True
+        Me.drcrNoneButton.Location = New System.Drawing.Point(184, 10)
+        Me.drcrNoneButton.Name = "drcrNoneButton"
+        Me.drcrNoneButton.Size = New System.Drawing.Size(51, 17)
+        Me.drcrNoneButton.TabIndex = 2
+        Me.drcrNoneButton.Text = "None"
+        Me.drcrNoneButton.UseVisualStyleBackColor = True
         '
-        'RadioButton1
+        'drcr0button
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Checked = True
-        Me.RadioButton1.Location = New System.Drawing.Point(138, 10)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(31, 17)
-        Me.RadioButton1.TabIndex = 1
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "0"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.drcr0button.AutoSize = True
+        Me.drcr0button.Checked = True
+        Me.drcr0button.Location = New System.Drawing.Point(138, 10)
+        Me.drcr0button.Name = "drcr0button"
+        Me.drcr0button.Size = New System.Drawing.Size(31, 17)
+        Me.drcr0button.TabIndex = 1
+        Me.drcr0button.TabStop = True
+        Me.drcr0button.Text = "0"
+        Me.drcr0button.UseVisualStyleBackColor = True
         '
         'Label3
         '
@@ -170,6 +169,6 @@ Partial Class miscFrm
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label3 As Label
-    Friend WithEvents RadioButton2 As RadioButton
-    Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents drcrNoneButton As RadioButton
+    Friend WithEvents drcr0button As RadioButton
 End Class
