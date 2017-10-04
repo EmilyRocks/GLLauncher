@@ -2,7 +2,8 @@
 
 Module unchecktrim
     Public removeTrim1 As String = "no"
-
+    Public trimStart As String
+    Public trimLength As String
 End Module
 
 Public Class miscFrm
@@ -15,8 +16,10 @@ Public Class miscFrm
         Dim crdrTag As XmlElement = newFile.CreateElement("misc")
         Dim rdlMisc As XmlElement = newFile.SelectSingleNode(xpath:="parms/rdl/miscellaneous")
 
-        'adds any extra characters to trim
+        'adds any extra characters to trim and establishes starting position and length fields for trim
         getTrimChars.Add(trimStrAddTxtbox.Text)
+        trimStart = trimStartTextbox.Text
+        trimLength = trimLengthTextbox.Text
 
 
 

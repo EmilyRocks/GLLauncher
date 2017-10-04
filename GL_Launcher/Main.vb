@@ -71,8 +71,8 @@ Public Class Launcher
         xmlTrim = String.Join(",", getTrimChars)
         If removeTrim1 = "no" Then
             charTrim.SetAttribute("trimChars", xmlTrim)
-            charTrim.SetAttribute("trimLength", "5")
-            charTrim.SetAttribute("trimBegin", "1")
+            charTrim.SetAttribute("trimLength", trimLength)
+            charTrim.SetAttribute("trimBegin", trimStart)
             charTrim.SetAttribute("name", "trim")
             miscSP.AppendChild(charTrim)
         End If

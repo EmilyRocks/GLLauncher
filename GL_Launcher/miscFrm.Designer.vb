@@ -33,8 +33,15 @@ Partial Class miscFrm
         Me.drcrNoneButton = New System.Windows.Forms.RadioButton()
         Me.drcr0button = New System.Windows.Forms.RadioButton()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.trimLengthTextbox = New System.Windows.Forms.TextBox()
+        Me.trimStartTextbox = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'trimStrAddTxtbox
@@ -93,7 +100,7 @@ Partial Class miscFrm
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.drValTextbox)
         Me.Panel1.Controls.Add(Me.crValTextbox)
-        Me.Panel1.Location = New System.Drawing.Point(24, 79)
+        Me.Panel1.Location = New System.Drawing.Point(24, 132)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(255, 37)
         Me.Panel1.TabIndex = 6
@@ -103,7 +110,7 @@ Partial Class miscFrm
         Me.Panel2.Controls.Add(Me.drcrNoneButton)
         Me.Panel2.Controls.Add(Me.drcr0button)
         Me.Panel2.Controls.Add(Me.Label3)
-        Me.Panel2.Location = New System.Drawing.Point(319, 79)
+        Me.Panel2.Location = New System.Drawing.Point(319, 132)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(255, 37)
         Me.Panel2.TabIndex = 7
@@ -139,11 +146,65 @@ Partial Class miscFrm
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "DR/CR Empty Field"
         '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.Label6)
+        Me.Panel3.Controls.Add(Me.Label5)
+        Me.Panel3.Controls.Add(Me.Label4)
+        Me.Panel3.Controls.Add(Me.trimLengthTextbox)
+        Me.Panel3.Controls.Add(Me.trimStartTextbox)
+        Me.Panel3.Location = New System.Drawing.Point(24, 64)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(255, 53)
+        Me.Panel3.TabIndex = 7
+        '
+        'Label4
+        '
+        Me.Label4.Location = New System.Drawing.Point(3, 15)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(98, 38)
+        Me.Label4.TabIndex = 4
+        Me.Label4.Text = "Substring Option  for Account field:"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'trimLengthTextbox
+        '
+        Me.trimLengthTextbox.Location = New System.Drawing.Point(178, 30)
+        Me.trimLengthTextbox.Name = "trimLengthTextbox"
+        Me.trimLengthTextbox.Size = New System.Drawing.Size(60, 20)
+        Me.trimLengthTextbox.TabIndex = 5
+        '
+        'trimStartTextbox
+        '
+        Me.trimStartTextbox.Location = New System.Drawing.Point(107, 30)
+        Me.trimStartTextbox.Name = "trimStartTextbox"
+        Me.trimStartTextbox.Size = New System.Drawing.Size(60, 20)
+        Me.trimStartTextbox.TabIndex = 3
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(107, 12)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(29, 13)
+        Me.Label5.TabIndex = 6
+        Me.Label5.Text = "Start"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(175, 12)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(40, 13)
+        Me.Label6.TabIndex = 7
+        Me.Label6.Text = "Length"
+        '
         'miscFrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(598, 261)
+        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.antiTrimBox)
@@ -155,6 +216,8 @@ Partial Class miscFrm
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -171,4 +234,10 @@ Partial Class miscFrm
     Friend WithEvents Label3 As Label
     Friend WithEvents drcrNoneButton As RadioButton
     Friend WithEvents drcr0button As RadioButton
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Label4 As Label
+    Friend WithEvents trimLengthTextbox As TextBox
+    Friend WithEvents trimStartTextbox As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label5 As Label
 End Class
