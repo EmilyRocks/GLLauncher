@@ -511,7 +511,7 @@ Public Class ColumnsFrm
             i = i + 1
             Dim lastFormat As XmlElement = newFile.CreateElement("format")
             i.ToString()
-            lastFormat.SetAttribute("text", "&amp;#13;&amp;#10;")
+            lastFormat.SetAttribute("text", "&#13;&#10;")
             lastFormat.SetAttribute("type", "text")
             lastFormat.SetAttribute("position", i)
             rdl.AppendChild(lastFormat)
