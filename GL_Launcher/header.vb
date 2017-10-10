@@ -295,184 +295,288 @@ Public Class Header
         'first position not dynamic, roll into first header row
         If hd1Textbox.Text <> "" AndAlso dynamic1Button.Checked = False Then
             getheaderFields1a.Add(hd1Textbox.Text)
+            'first column only has text
+            If hd2Textbox.Text = "" Then
+                header1Content = String.Join(xslDelimiter, getheaderFields1a)
+                h1.SetAttribute("text", header1Content)
+                h1.SetAttribute("type", "text")
+                h1.SetAttribute("position", "1")
+                rdl.PrependChild(h1)
+                headerPositionCount = headerPositionCount + 1
+                'adds line feed
+                lineReturn.SetAttribute("text", "&#13;&#10;")
+                lineReturn.SetAttribute("type", "text")
+                lineReturn.SetAttribute("position", headerPositionCount.ToString)
+                rdl.InsertAfter(lineReturn, h1)
+            End If
+            'second column has data
             If hd2Textbox.Text <> "" AndAlso dynamic2Button.Checked = False Then
                 getheaderFields1a.Add(hd2Textbox.Text)
+                'second column and first column have text data, third and onward empty
+                If hd3Textbox.Text = "" AndAlso headerPositionCount = 1 Then
+                    header1Content = String.Join(xslDelimiter, getheaderFields1a)
+                    h1.SetAttribute("text", header1Content)
+                    h1.SetAttribute("type", "text")
+                    h1.SetAttribute("position", "1")
+                    rdl.PrependChild(h1)
+                    headerPositionCount = headerPositionCount + 1
+                    'adds line feed
+                    lineReturn.SetAttribute("text", "&#13;&#10;")
+                    lineReturn.SetAttribute("type", "text")
+                    lineReturn.SetAttribute("position", headerPositionCount.ToString)
+                    rdl.InsertAfter(lineReturn, h1)
+                End If
                 If hd3Textbox.Text <> "" AndAlso dynamic3Button.Checked = False Then
                     getheaderFields1a.Add(hd3Textbox.Text)
+                    'first 3 columns are all text data, rest empty
+                    If hd4Textbox.Text = "" AndAlso headerPositionCount = 1 Then
+                        header1Content = String.Join(xslDelimiter, getheaderFields1a)
+                        h1.SetAttribute("text", header1Content)
+                        h1.SetAttribute("type", "text")
+                        h1.SetAttribute("position", "1")
+                        rdl.PrependChild(h1)
+                        headerPositionCount = headerPositionCount + 1
+                        'adds line feed
+                        lineReturn.SetAttribute("text", "&#13;&#10;")
+                        lineReturn.SetAttribute("type", "text")
+                        lineReturn.SetAttribute("position", headerPositionCount.ToString)
+                        rdl.InsertAfter(lineReturn, h1)
+                    End If
+                    '4th column has text
                     If hd4Textbox.Text <> "" AndAlso dynamic4Button.Checked = False Then
                         getheaderFields1a.Add(hd4Textbox.Text)
+                        'first 4 columns have text only
+                        If hd5Textbox.Text = "" AndAlso headerPositionCount = 1 Then
+                            header1Content = String.Join(xslDelimiter, getheaderFields1a)
+                            h1.SetAttribute("text", header1Content)
+                            h1.SetAttribute("type", "text")
+                            h1.SetAttribute("position", "1")
+                            rdl.PrependChild(h1)
+                            headerPositionCount = headerPositionCount + 1
+                            'adds line feed
+                            lineReturn.SetAttribute("text", "&#13;&#10;")
+                            lineReturn.SetAttribute("type", "text")
+                            lineReturn.SetAttribute("position", headerPositionCount.ToString)
+                            rdl.InsertAfter(lineReturn, h1)
+                        End If
+                        '5th column has text
                         If hd5Textbox.Text <> "" AndAlso dynamic5Button.Checked = False Then
                             getheaderFields1a.Add(hd5Textbox.Text)
+                            '5 columns have text only
+                            If hd6Textbox.Text = "" AndAlso headerPositionCount = 1 Then
+                                header1Content = String.Join(xslDelimiter, getheaderFields1a)
+                                h1.SetAttribute("text", header1Content)
+                                h1.SetAttribute("type", "text")
+                                h1.SetAttribute("position", "1")
+                                rdl.PrependChild(h1)
+                                headerPositionCount = headerPositionCount + 1
+                                'adds line feed
+                                lineReturn.SetAttribute("text", "&#13;&#10;")
+                                lineReturn.SetAttribute("type", "text")
+                                lineReturn.SetAttribute("position", headerPositionCount.ToString)
+                                rdl.InsertAfter(lineReturn, h1)
+                            End If
+                            '6th column has text
                             If hd6Textbox.Text <> "" AndAlso dynamic6Button.Checked = False Then
                                 getheaderFields1a.Add(hd6Textbox.Text)
+                                '6 columns have text only
+                                If hd7Textbox.Text = "" AndAlso headerPositionCount = 1 Then
+                                    header1Content = String.Join(xslDelimiter, getheaderFields1a)
+                                    h1.SetAttribute("text", header1Content)
+                                    h1.SetAttribute("type", "text")
+                                    h1.SetAttribute("position", "1")
+                                    rdl.PrependChild(h1)
+                                    headerPositionCount = headerPositionCount + 1
+                                    'adds line feed
+                                    lineReturn.SetAttribute("text", "&#13;&#10;")
+                                    lineReturn.SetAttribute("type", "text")
+                                    lineReturn.SetAttribute("position", headerPositionCount.ToString)
+                                    rdl.InsertAfter(lineReturn, h1)
+                                End If
+
                                 If hd7Textbox.Text <> "" AndAlso dynamic7Button.Checked = False Then
                                     getheaderFields1a.Add(hd7Textbox.Text)
-                                    'go this way if column 9 has data
-                                    If hd8Textbox.Text <> "" AndAlso dynamic8Button.Checked = False AndAlso hd9Textbox.Text <> "" Then
-                                        getheaderFields1a.Add(hd8Textbox.Text)
-                                        'all 9 column headers are text
-                                        If hd9Textbox.Text <> "" AndAlso dynamic9Button.Checked = False Then
-                                            getheaderFields1a.Add(hd9Textbox.Text)
-                                            'does not need this delimiter added to the end until more columns are available
-                                            'getheaderFields1a.Add(xslDelimiter)
-                                            header1Content = String.Join(xslDelimiter, getheaderFields1a)
-                                            h1.SetAttribute("text", header1Content)
-                                            h1.SetAttribute("type", "text")
-                                            h1.SetAttribute("position", "1")
-                                            rdl.PrependChild(h1)
-                                            headerPositionCount = headerPositionCount + 1
-                                            'adds line feed
-                                            lineReturn.SetAttribute("text", "&#13;&#10;")
-                                            lineReturn.SetAttribute("type", "text")
-                                            lineReturn.SetAttribute("position", headerPositionCount.ToString)
-                                            rdl.InsertAfter(lineReturn, h1)
-                                        End If
-                                        '8 column headers are text, column 9 is variable
-                                        If hd9Textbox.Text <> "" AndAlso dynamic9Button.Checked = True Then
-                                            'writes the text columns before the value in column 9
-                                            'forces a delimiter at the end of the values
-                                            getheaderFields1a.Add("")
-                                            'takes all the header fields and turns them into a nice long string with delimiter included
-                                            header1Content = String.Join(xslDelimiter, getheaderFields1a)
-                                            'drops header info into the attribute
-                                            h1.SetAttribute("text", header1Content)
-                                            'drops text into type
-                                            h1.SetAttribute("type", "text")
-                                            'assigns the position - Good luck my fellow GL programmers, if you are reading this, sorry the code is such a mess!
-                                            h1.SetAttribute("position", "1")
-                                            'puts the line in the xml file
-                                            rdl.PrependChild(h1)
-                                            'moves the position upwards 1
-                                            headerPositionCount = headerPositionCount + 1
-                                            'writes dynamic column 9 to xml
-                                            h2.SetAttribute("value", hd9Textbox.Text)
-                                            h2.SetAttribute("type", "variable")
-                                            h2.SetAttribute("position", headerPositionCount.ToString)
-                                            rdl.InsertAfter(h2, h1)
-                                            'moves the position upwards 1
-                                            headerPositionCount = headerPositionCount + 1
-                                            'adds line feed
-                                            lineReturn.SetAttribute("text", "&#13;&#10;")
-                                            lineReturn.SetAttribute("type", "text")
-                                            lineReturn.SetAttribute("position", headerPositionCount.ToString)
-                                            rdl.InsertAfter(lineReturn, h2)
-                                        End If
-
-                                    End If
-                                    'if 8 columns had a text header and column 9 is empty
-                                    If hd8Textbox.Text <> "" AndAlso dynamic8Button.Checked = False AndAlso hd9Textbox.Text = "" Then
-                                        getheaderFields1a.Add(hd8Textbox.Text)
+                                    '7 columns have text only
+                                    If hd8Textbox.Text = "" AndAlso headerPositionCount = 1 Then
                                         header1Content = String.Join(xslDelimiter, getheaderFields1a)
                                         h1.SetAttribute("text", header1Content)
                                         h1.SetAttribute("type", "text")
                                         h1.SetAttribute("position", "1")
                                         rdl.PrependChild(h1)
                                         headerPositionCount = headerPositionCount + 1
+                                        'adds line feed
                                         lineReturn.SetAttribute("text", "&#13;&#10;")
                                         lineReturn.SetAttribute("type", "text")
                                         lineReturn.SetAttribute("position", headerPositionCount.ToString)
                                         rdl.InsertAfter(lineReturn, h1)
                                     End If
-                                    'if 7 columns had text header and column 8 is dynamic and column 9 empty
-                                    If hd8Textbox.Text <> "" AndAlso dynamic8Button.Checked = True AndAlso hd9Textbox.Text = "" Then
-                                        getheaderFields1a.Add("")
-                                        header1Content = String.Join(xslDelimiter, getheaderFields1a)
-                                        h1.SetAttribute("text", header1Content)
-                                        h1.SetAttribute("type", "text")
-                                        h1.SetAttribute("position", "1")
-                                        rdl.PrependChild(h1)
+                                    'go this way if column 9 has data
+                                    If hd8Textbox.Text <> "" AndAlso dynamic8Button.Checked = False AndAlso hd9Textbox.Text <> "" Then
+                                            getheaderFields1a.Add(hd8Textbox.Text)
+                                            'all 9 column headers are text
+                                            If hd9Textbox.Text <> "" AndAlso dynamic9Button.Checked = False Then
+                                                getheaderFields1a.Add(hd9Textbox.Text)
+                                                'does not need this delimiter added to the end until more columns are available
+                                                'getheaderFields1a.Add(xslDelimiter)
+                                                header1Content = String.Join(xslDelimiter, getheaderFields1a)
+                                                h1.SetAttribute("text", header1Content)
+                                                h1.SetAttribute("type", "text")
+                                                h1.SetAttribute("position", "1")
+                                                rdl.PrependChild(h1)
+                                                headerPositionCount = headerPositionCount + 1
+                                                'adds line feed
+                                                lineReturn.SetAttribute("text", "&#13;&#10;")
+                                                lineReturn.SetAttribute("type", "text")
+                                                lineReturn.SetAttribute("position", headerPositionCount.ToString)
+                                                rdl.InsertAfter(lineReturn, h1)
+                                            End If
+                                            '8 column headers are text, column 9 is variable
+                                            If hd9Textbox.Text <> "" AndAlso dynamic9Button.Checked = True Then
+                                                'writes the text columns before the value in column 9
+                                                'forces a delimiter at the end of the values
+                                                getheaderFields1a.Add("")
+                                                'takes all the header fields and turns them into a nice long string with delimiter included
+                                                header1Content = String.Join(xslDelimiter, getheaderFields1a)
+                                                'drops header info into the attribute
+                                                h1.SetAttribute("text", header1Content)
+                                                'drops text into type
+                                                h1.SetAttribute("type", "text")
+                                                'assigns the position - Good luck my fellow GL programmers, if you are reading this, sorry the code is such a mess!
+                                                h1.SetAttribute("position", "1")
+                                                'puts the line in the xml file
+                                                rdl.PrependChild(h1)
+                                                'moves the position upwards 1
+                                                headerPositionCount = headerPositionCount + 1
+                                                'writes dynamic column 9 to xml
+                                                h2.SetAttribute("value", hd9Textbox.Text)
+                                                h2.SetAttribute("type", "variable")
+                                                h2.SetAttribute("position", headerPositionCount.ToString)
+                                                rdl.InsertAfter(h2, h1)
+                                                'moves the position upwards 1
+                                                headerPositionCount = headerPositionCount + 1
+                                                'adds line feed
+                                                lineReturn.SetAttribute("text", "&#13;&#10;")
+                                                lineReturn.SetAttribute("type", "text")
+                                                lineReturn.SetAttribute("position", headerPositionCount.ToString)
+                                                rdl.InsertAfter(lineReturn, h2)
+                                            End If
 
-                                        headerPositionCount = headerPositionCount + 1
+                                        End If
+                                        'if 8 columns had a text header and column 9 is empty
+                                        If hd8Textbox.Text <> "" AndAlso dynamic8Button.Checked = False AndAlso hd9Textbox.Text = "" Then
+                                            getheaderFields1a.Add(hd8Textbox.Text)
+                                            header1Content = String.Join(xslDelimiter, getheaderFields1a)
+                                            h1.SetAttribute("text", header1Content)
+                                            h1.SetAttribute("type", "text")
+                                            h1.SetAttribute("position", "1")
+                                            rdl.PrependChild(h1)
+                                            headerPositionCount = headerPositionCount + 1
+                                            lineReturn.SetAttribute("text", "&#13;&#10;")
+                                            lineReturn.SetAttribute("type", "text")
+                                            lineReturn.SetAttribute("position", headerPositionCount.ToString)
+                                            rdl.InsertAfter(lineReturn, h1)
+                                        End If
+                                        'if 7 columns had text header and column 8 is dynamic and column 9 empty
+                                        If hd8Textbox.Text <> "" AndAlso dynamic8Button.Checked = True AndAlso hd9Textbox.Text = "" Then
+                                            getheaderFields1a.Add("")
+                                            header1Content = String.Join(xslDelimiter, getheaderFields1a)
+                                            h1.SetAttribute("text", header1Content)
+                                            h1.SetAttribute("type", "text")
+                                            h1.SetAttribute("position", "1")
+                                            rdl.PrependChild(h1)
 
-                                        h2.SetAttribute("value", hd8Textbox.Text)
-                                        h2.SetAttribute("type", "variable")
-                                        h2.SetAttribute("position", headerPositionCount.ToString)
-                                        rdl.InsertAfter(h2, h1)
+                                            headerPositionCount = headerPositionCount + 1
 
-                                        headerPositionCount = headerPositionCount + 1
-
-                                        lineReturn.SetAttribute("text", "&#13;&#10;")
-                                        lineReturn.SetAttribute("type", "text")
-                                        lineReturn.SetAttribute("position", headerPositionCount.ToString)
-                                        rdl.InsertAfter(lineReturn, h2)
-
-                                    End If
-                                    'if 7 columns had text header and column 8 is dynamic and column 9 exists
-                                    If hd8Textbox.Text <> "" AndAlso dynamic8Button.Checked = True AndAlso hd9Textbox.Text <> "" Then
-                                        getheaderFields1a.Add("")
-                                        header1Content = String.Join(xslDelimiter, getheaderFields1a)
-                                        h1.SetAttribute("text", header1Content)
-                                        h1.SetAttribute("type", "text")
-                                        h1.SetAttribute("position", "1")
-                                        rdl.PrependChild(h1)
-
-                                        headerPositionCount = headerPositionCount + 1
-
-                                        h2.SetAttribute("value", hd8Textbox.Text)
-                                        h2.SetAttribute("type", "variable")
-                                        h2.SetAttribute("position", headerPositionCount.ToString)
-                                        rdl.InsertAfter(h2, h1)
-
-                                        headerPositionCount = headerPositionCount + 1
-
-                                        'column 9 as text
-                                        If dynamic9Button.Checked = False Then
-                                            GetheaderFields1bb.Add("")
-                                            GetheaderFields1bb.Add(hd9Textbox.Text)
-                                            header2Content = String.Join(xslDelimiter, GetheaderFields1bb)
-                                            h3.SetAttribute("text", header2Content)
-                                            h3.SetAttribute("type", "text")
-                                            h3.SetAttribute("position", headerPositionCount.ToString)
-                                            rdl.InsertAfter(h3, h2)
+                                            h2.SetAttribute("value", hd8Textbox.Text)
+                                            h2.SetAttribute("type", "variable")
+                                            h2.SetAttribute("position", headerPositionCount.ToString)
+                                            rdl.InsertAfter(h2, h1)
 
                                             headerPositionCount = headerPositionCount + 1
 
                                             lineReturn.SetAttribute("text", "&#13;&#10;")
                                             lineReturn.SetAttribute("type", "text")
                                             lineReturn.SetAttribute("position", headerPositionCount.ToString)
-                                            rdl.InsertAfter(lineReturn, h3)
+                                            rdl.InsertAfter(lineReturn, h2)
+
                                         End If
-                                        'column 9 as variable
-                                        If dynamic9Button.Checked = True Then
-                                            h3.SetAttribute("value", xslDelimiter)
-                                            h3.SetAttribute("type", "text")
-                                            h3.SetAttribute("position", headerPositionCount.ToString)
-                                            rdl.InsertAfter(h3, h2)
+                                        'if 7 columns had text header and column 8 is dynamic and column 9 exists
+                                        If hd8Textbox.Text <> "" AndAlso dynamic8Button.Checked = True AndAlso hd9Textbox.Text <> "" Then
+                                            getheaderFields1a.Add("")
+                                            header1Content = String.Join(xslDelimiter, getheaderFields1a)
+                                            h1.SetAttribute("text", header1Content)
+                                            h1.SetAttribute("type", "text")
+                                            h1.SetAttribute("position", "1")
+                                            rdl.PrependChild(h1)
 
                                             headerPositionCount = headerPositionCount + 1
 
-                                            h4.SetAttribute("value", hd9Textbox.Text)
-                                            h4.SetAttribute("type", "variable")
-                                            h4.SetAttribute("position", headerPositionCount.ToString)
-                                            rdl.InsertAfter(h4, h3)
+                                            h2.SetAttribute("value", hd8Textbox.Text)
+                                            h2.SetAttribute("type", "variable")
+                                            h2.SetAttribute("position", headerPositionCount.ToString)
+                                            rdl.InsertAfter(h2, h1)
 
                                             headerPositionCount = headerPositionCount + 1
 
-                                            lineReturn.SetAttribute("text", "&#13;&#10;")
-                                            lineReturn.SetAttribute("type", "text")
-                                            lineReturn.SetAttribute("position", headerPositionCount.ToString)
-                                            rdl.InsertAfter(lineReturn, h4)
+                                            'column 9 as text
+                                            If dynamic9Button.Checked = False Then
+                                                GetheaderFields1bb.Add("")
+                                                GetheaderFields1bb.Add(hd9Textbox.Text)
+                                                header2Content = String.Join(xslDelimiter, GetheaderFields1bb)
+                                                h3.SetAttribute("text", header2Content)
+                                                h3.SetAttribute("type", "text")
+                                                h3.SetAttribute("position", headerPositionCount.ToString)
+                                                rdl.InsertAfter(h3, h2)
+
+                                                headerPositionCount = headerPositionCount + 1
+
+                                                lineReturn.SetAttribute("text", "&#13;&#10;")
+                                                lineReturn.SetAttribute("type", "text")
+                                                lineReturn.SetAttribute("position", headerPositionCount.ToString)
+                                                rdl.InsertAfter(lineReturn, h3)
+                                            End If
+                                            'column 9 as variable
+                                            If dynamic9Button.Checked = True Then
+                                                h3.SetAttribute("value", xslDelimiter)
+                                                h3.SetAttribute("type", "text")
+                                                h3.SetAttribute("position", headerPositionCount.ToString)
+                                                rdl.InsertAfter(h3, h2)
+
+                                                headerPositionCount = headerPositionCount + 1
+
+                                                h4.SetAttribute("value", hd9Textbox.Text)
+                                                h4.SetAttribute("type", "variable")
+                                                h4.SetAttribute("position", headerPositionCount.ToString)
+                                                rdl.InsertAfter(h4, h3)
+
+                                                headerPositionCount = headerPositionCount + 1
+
+                                                lineReturn.SetAttribute("text", "&#13;&#10;")
+                                                lineReturn.SetAttribute("type", "text")
+                                                lineReturn.SetAttribute("position", headerPositionCount.ToString)
+                                                rdl.InsertAfter(lineReturn, h4)
+                                            End If
+
+
+
                                         End If
-
-
 
                                     End If
-
                                 End If
                             End If
                         End If
                     End If
                 End If
             End If
-        End If
 
         'first position dynamic
-        'If hd1Textbox.Text <> "" AndAlso dynamic1Button.Checked = True Then
-        '    h1.SetAttribute("value", header1Content)
-        '    h1.SetAttribute("type", "variable")
-        '    h1.SetAttribute("position", "1")
-        '    rdl.PrependChild(h1)
-        'End If
+        If hd1Textbox.Text <> "" AndAlso dynamic1Button.Checked = True Then
+            h1.SetAttribute("value", hd1Textbox.Text)
+            h1.SetAttribute("type", "variable")
+            h1.SetAttribute("position", "1")
+            rdl.PrependChild(h1)
+            headerPositionCount = headerPositionCount + 1
+        End If
 
 
 

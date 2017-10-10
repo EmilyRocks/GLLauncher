@@ -214,7 +214,7 @@ Partial Class Header
         Me.hd9Textbox.Name = "hd9Textbox"
         Me.hd9Textbox.Size = New System.Drawing.Size(132, 21)
         Me.hd9Textbox.Sorted = True
-        Me.hd9Textbox.TabIndex = 15
+        Me.hd9Textbox.TabIndex = 16
         '
         'hd8Textbox
         '
