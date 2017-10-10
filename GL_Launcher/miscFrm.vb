@@ -2,8 +2,8 @@
 
 Module unchecktrim
     Public removeTrim1 As String = "no"
-    Public trimStart As String
-    Public trimLength As String
+    Public trimStart As String = "1"
+    Public trimLength As String = "200"
 End Module
 
 Public Class miscFrm
@@ -18,9 +18,13 @@ Public Class miscFrm
 
         'adds any extra characters to trim and establishes starting position and length fields for trim
         getTrimChars.Add(trimStrAddTxtbox.Text)
-        trimStart = trimStartTextbox.Text
-        trimLength = trimLengthTextbox.Text
-
+        If trimStartTextbox.Text <> "" Then
+            trimStart = trimStartTextbox.Text
+        End If
+        If trimLengthTextbox.Text <> "" Then
+            trimLength = trimLengthTextbox.Text
+            removeTrim1 = "yes"
+        End If
 
 
         'turn on for sanity check during testing to see if trim list is pulling characters

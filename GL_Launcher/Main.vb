@@ -75,6 +75,12 @@ Public Class Launcher
             charTrim.SetAttribute("trimBegin", trimStart)
             charTrim.SetAttribute("name", "trim")
             miscSP.AppendChild(charTrim)
+        Else
+            charTrim.SetAttribute("trimChars", "")
+            charTrim.SetAttribute("trimLength", trimLength)
+            charTrim.SetAttribute("trimBegin", trimStart)
+            charTrim.SetAttribute("name", "trim")
+            miscSP.AppendChild(charTrim)
         End If
         'needs or trim action won't save
         newFile.Save(path)
