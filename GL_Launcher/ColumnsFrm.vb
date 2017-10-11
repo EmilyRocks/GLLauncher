@@ -1,5 +1,6 @@
 ﻿Imports System.ComponentModel
 Imports System.Xml
+Imports System.Web
 
 'passing delimiter in from delimiter form
 Module Variables
@@ -31,6 +32,7 @@ Module Variables
             cdmisctrigger = value
         End Set
     End Property
+
 
     Dim dateList() As String = {"beginDate", "checkDate", "endDate", "endofMonthDate", "processDate"}
 
@@ -507,14 +509,22 @@ Public Class ColumnsFrm
 
         'After all columns, add another position for the carriage return, line feed
         If fields.HasChildNodes Then
+            Dim y As String
+            y = "&#13;&#10;"
+
             Dim i As Integer = rdl.GetElementsByTagName("format").Count
             i = i + 1
             Dim lastFormat As XmlElement = newFile.CreateElement("format")
             i.ToString()
-            lastFormat.SetAttribute("text", "&#13;&#10;")
+            lastFormat.SetAttribute("text", "<br />")
             lastFormat.SetAttribute("type", "text")
             lastFormat.SetAttribute("position", i)
             rdl.AppendChild(lastFormat)
+
+            'End Using
+
+
+
         End If
 
         'this code declares the location of a specific node by specific attribute and deletes it
